@@ -1,4 +1,7 @@
+import { RecipeService } from './../recipe.service';
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from '../recipe.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-slider',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
 
-  constructor() { }
+  recipeList = this.recipeService.recipes;
+
+  width: string;
+  height: string;
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
+    this.showRecipeList();
+  }
+
+  showRecipeList(): Recipe[] {
+    return this.recipeList.reverse();
   }
 
 }

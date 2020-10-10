@@ -1,6 +1,8 @@
-<ul class="recipe-list">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+<div class="recipe-list">
+
+    <app-recipe class="recipe-item"
+                [recipe]="item"
+                *ngFor="let item of recipeList">
+    </app-recipe>
+
+</div>

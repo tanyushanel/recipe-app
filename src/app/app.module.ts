@@ -7,6 +7,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { SearchComponent } from './search/search.component';
 import { MenuComponent } from './menu/menu.component';
 import { SliderComponent } from './slider/slider.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SliderComponent } from './slider/slider.component';
     RecipeComponent,
     SearchComponent,
     MenuComponent,
-    SliderComponent
+    SliderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

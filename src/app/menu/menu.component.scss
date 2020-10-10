@@ -1,8 +1,11 @@
 hr {
-  width: 1rem;
-  font-weight: bold;
+  width: 1.5rem;
+  height: 2px;
   margin-left: 0;
+  border: none;
+  background: #808080;
 }
 div {
   display: inline-block;
+  cursor: pointer;
 }

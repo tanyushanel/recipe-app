@@ -1,6 +1,14 @@
-input {
+.search-container {
+  position: relative;
   float: right;
+}
+input {
   display: inline-block;
   border: none;
-  background: #d3d3d3;
+}
+i {
+  cursor: pointer;
+  color: #808080;
+  position: absolute;
+  right: 0;
 }

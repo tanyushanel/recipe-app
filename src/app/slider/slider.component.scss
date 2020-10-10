@@ -1,9 +1,11 @@
-li {
-  list-style-type: none;
+.recipe-list {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.recipe-item {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 1px solid #d3d3d3;
-  margin-left: 0.5rem;
+  text-align: center;
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Recipe, RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
+  @Input() recipe: Recipe; 
 
-  constructor() { }
+  width: string;
+  height: string;
+  
+
+ constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
+  }
+
+   handleImageLoad(event: any): void {
+    this.width = event.target.naturalWidth;
+    this.height = event.target.naturalHeight;
   }
 
 }
