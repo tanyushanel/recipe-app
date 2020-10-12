@@ -1,31 +1,15 @@
-p {
+.title {
   font-size: 70%;
   margin: 0.25rem;
   color: #808080;
-}
-
-.photo-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.recipe-image {
-  width: auto;
-  height: 100%;
-}
-
-.portrait {
-  width: 100%;
-  height: auto;
+  cursor: pointer;
 }
 
 i {
-  position: absolute;
+  display: inline-block;
   right: 5px;
   bottom: 5px;
   color: #808080;
+  cursor: pointer;
+  font-size: 80%;
 }

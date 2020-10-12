@@ -22,7 +22,7 @@ export class SliderComponent implements OnInit {
   }
 
   showRecipeList(): Recipe[] {
-    return this.recipeList.reverse();
+    return this.recipeList;
   }
 
 }

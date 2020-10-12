@@ -1,12 +1,14 @@
 <div class="recipe-container">
+    <p class="title">{{ recipe.title }}</p>
     <div class="photo-wrapper">
-        <img class="recipe-image"
-             [src]="recipe.image"
-             [class.portrait]="width < height">
+        <app-recipe-image [recipe]="recipe"></app-recipe-image>
+    </div>
+    <div class="rating">
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
         <i class="material-icons"> star_border </i>
     </div>
-    <p>{{ recipe.title }}</p>
-
-
 
 </div>

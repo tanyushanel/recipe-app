@@ -1,0 +1,37 @@
+<div class="recipe-container">
+    <div class="rating">
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
+        <i class="material-icons"> star_border </i>
+    </div>
+    <h4 class="title">{{ recipe.title }}</h4>
+
+    <div class="desc-container">
+        <div class="cell">
+            <div class="photo-wrapper">
+                <app-recipe-image [recipe]="recipe"></app-recipe-image>
+            </div>
+        </div>
+
+        <div class="cell desc">
+
+            <ul class="row">
+                <i>Ingredients:</i>
+                <li *ngFor="let item of recipe.ingredients; let ind = index">{{ recipe.ingredients[ind] }}</li>
+            </ul>
+
+            <ul class="row">
+                <i>Description:</i>
+                <li>{{ recipe.description }}
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+</div>

@@ -20,3 +20,13 @@ body {
   white-space: nowrap;
   direction: ltr;
 }
+
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}

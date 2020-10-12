@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 .main-container {
   width: 25rem;
   min-width: 10rem;
@@ -11,4 +19,10 @@
 ul {
   margin: 0;
   padding: 0;
+}
+
+.recipe-desc {
+  border: 1px solid #d3d3d3;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
 }
