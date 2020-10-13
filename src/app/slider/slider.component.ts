@@ -1,5 +1,5 @@
 import { RecipeService } from './../recipe.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.service';
 import { BehaviorSubject } from 'rxjs';
 
@@ -10,8 +10,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SliderComponent implements OnInit {
 
+  @Output() recipeSelected = new EventEmitter<Recipe>();
   recipeList = this.recipeService.recipes;
-
   width: string;
   height: string;
 
@@ -23,6 +23,10 @@ export class SliderComponent implements OnInit {
 
   showRecipeList(): Recipe[] {
     return this.recipeList;
+  }
+
+  onRecipeSelected(event): void {
+    this.recipeSelected.emit(event);
   }
 
 }

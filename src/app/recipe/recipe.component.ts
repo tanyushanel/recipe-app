@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe, RecipeService } from '../recipe.service';
 
 @Component({
@@ -9,11 +8,14 @@ import { Recipe, RecipeService } from '../recipe.service';
 })
 export class RecipeComponent implements OnInit {
   @Input() recipe: Recipe;
+  @Output() recipeSelected = new EventEmitter<Recipe>();
 
  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void { }
 
-   
+  onRecipeSelected(): void {
+    this.recipeSelected.emit(this.recipe);
+   }
 
 }

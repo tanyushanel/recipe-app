@@ -1,6 +1,5 @@
 import { Recipe, RecipeService } from './../recipe.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +9,13 @@ import { BehaviorSubject } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   @Input() recipe: Recipe;
-  
-
   recipeList = this.recipeService.recipes;
 
   constructor(private recipeService: RecipeService) { }
 
-  ngOnInit(): void {
-    
-    
-  }
+  ngOnInit(): void { }
+  
+  onRecipeSelected(event): void {
+    this.recipe = event;
+ }
 }

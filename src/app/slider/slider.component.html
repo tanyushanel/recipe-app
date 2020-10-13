@@ -2,7 +2,8 @@
 
     <app-recipe class="recipe-item"
                 [recipe]="item"
+                (recipeSelected)="onRecipeSelected($event)"
                 *ngFor="let item of recipeList">
+        <!-- (click)="onSelectRecipe(item)"> -->
     </app-recipe>
-
 </div>

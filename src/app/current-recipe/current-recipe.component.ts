@@ -8,13 +8,11 @@ import { Recipe, RecipeService } from '../recipe.service';
 })
 export class CurrentRecipeComponent implements OnInit {
 
-  @Input() recipe: Recipe;
-  
+  @Input() recipe: Recipe;  
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     this.recipe = this.recipeService.randomRecipe;
-  }
-
+  }  
 }

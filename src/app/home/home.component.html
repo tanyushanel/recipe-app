@@ -5,7 +5,7 @@
         <app-search></app-search>
     </header>
     <h2>RecipeApp</h2>
-    <app-slider></app-slider>
+    <app-slider (recipeSelected)="onRecipeSelected($event)"></app-slider>
 
     <main class="recipe-desc">
         <app-current-recipe [recipe]="recipe"></app-current-recipe>

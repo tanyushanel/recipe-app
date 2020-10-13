@@ -1,4 +1,4 @@
-<div class="recipe-container">
+<div class="recipe-container" (click)="onRecipeSelected()">
     <p class="title">{{ recipe.title }}</p>
     <div class="photo-wrapper">
         <app-recipe-image [recipe]="recipe"></app-recipe-image>
@@ -10,5 +10,4 @@
         <i class="material-icons"> star_border </i>
         <i class="material-icons"> star_border </i>
     </div>
-
 </div>

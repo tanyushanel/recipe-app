@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 export interface Recipe {
   id: number;
@@ -66,12 +65,7 @@ export class RecipeService {
       image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&w=1000&q=80'
     },
   ];
-
-
-
   randomRecipe = (this.recipes[Math.floor(Math.random() * (this.recipes.length))]);
 
-
-
-  constructor() {}
+  constructor() { }  
 }
