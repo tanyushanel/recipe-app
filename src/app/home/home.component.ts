@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   @Input() recipe: Recipe;
+  @Input() rate: number;
   recipeList = this.recipeService.recipes;
 
   constructor(private recipeService: RecipeService) { }
@@ -17,5 +18,9 @@ export class HomeComponent implements OnInit {
   
   onRecipeSelected(event): void {
     this.recipe = event;
- }
+  }
+  
+  onRateChange(event): void {
+    this.rate = event;
+  }
 }

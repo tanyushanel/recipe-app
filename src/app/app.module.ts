@@ -10,6 +10,7 @@ import { SliderComponent } from './slider/slider.component';
 import { HomeComponent } from './home/home.component';
 import { CurrentRecipeComponent } from './current-recipe/current-recipe.component';
 import { RecipeImageComponent } from './recipe-image/recipe-image.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RecipeImageComponent } from './recipe-image/recipe-image.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

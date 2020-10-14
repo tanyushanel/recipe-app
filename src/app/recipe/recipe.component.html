@@ -1,13 +1,11 @@
-<div class="recipe-container" (click)="onRecipeSelected()">
+<div class="recipe-container"
+     (click)="onRecipeSelected()">
     <p class="title">{{ recipe.title }}</p>
     <div class="photo-wrapper">
         <app-recipe-image [recipe]="recipe"></app-recipe-image>
     </div>
     <div class="rating">
-        <i class="material-icons"> star_border </i>
-        <i class="material-icons"> star_border </i>
-        <i class="material-icons"> star_border </i>
-        <i class="material-icons"> star_border </i>
-        <i class="material-icons"> star_border </i>
+        <i class="material-icons"
+           *ngFor="let i of [1,2,3,4,5]">{{ i <= rate ? "star" : "star_border" }}</i>
     </div>
 </div>

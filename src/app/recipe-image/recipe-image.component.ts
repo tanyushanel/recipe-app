@@ -16,7 +16,7 @@ export class RecipeImageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleImageLoad(event: any): void {
+  handleImageLoad(event): void {
     this.width = event.target.naturalWidth;
     this.height = event.target.naturalHeight;
   }

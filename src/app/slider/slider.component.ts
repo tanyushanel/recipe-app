@@ -11,6 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 export class SliderComponent implements OnInit {
 
   @Output() recipeSelected = new EventEmitter<Recipe>();
+  @Input() rate: number;
   recipeList = this.recipeService.recipes;
   width: string;
   height: string;

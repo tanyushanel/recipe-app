@@ -62,7 +62,7 @@ export class RecipeService {
       title: 'Bun',
       ingredients: ['milk', 'four', 'egg'],
       description: 'Bake it',
-      image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&w=1000&q=80'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVoB3a_65P1uEA5W3EgOyAsCbsmkTmtmVF8Q&usqp=CAU'
     },
   ];
   randomRecipe = (this.recipes[Math.floor(Math.random() * (this.recipes.length))]);
