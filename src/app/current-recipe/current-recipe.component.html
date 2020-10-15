@@ -3,15 +3,15 @@
 
         <i class="material-icons"
            *ngFor="let i of [1,2,3,4,5]"
-           (click)="changeRate(i)">{{ i <= rate ? "star" : "star_border" }}</i>
+           (click)="onChangeRate(i)">{{ i <= rateCurrent ? "star" : "star_border" }}</i>
 
     </div>
-    <h4 class="title">{{ recipe.title }}</h4>
+    <h4 class="title">{{ recipeCurrent.title }}</h4>
 
     <div class="desc-container">
         <div class="cell">
             <div class="photo-wrapper">
-                <app-recipe-image [recipe]="recipe"></app-recipe-image>
+                <app-recipe-image [recipe]="recipeCurrent"></app-recipe-image>
             </div>
         </div>
 
@@ -19,19 +19,18 @@
 
             <ul class="row">
                 <i>Ingredients:</i>
-                <li *ngFor="let item of recipe.ingredients; let ind = index">{{ recipe.ingredients[ind] }}</li>
+                <li *ngFor="let item of recipeCurrent.ingredients; let ind = index">{{ recipeCurrent.ingredients[ind] }}
+                </li>
             </ul>
 
             <ul class="row">
                 <i>Description:</i>
-                <li>{{ recipe.description }}
+                <li>{{ recipeCurrent.description }}
                 </li>
             </ul>
 
         </div>
 
     </div>
-
-
 
 </div>

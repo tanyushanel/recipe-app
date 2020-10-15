@@ -4,20 +4,23 @@ import { Recipe } from '../recipe.service';
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.scss']
+  styleUrls: ['./recipe.component.scss'],
 })
 export class RecipeComponent implements OnInit {
-  @Input() recipe: Recipe;
-  @Input() rate: number;
+  @Input() recipeRecipe: Recipe;
+  @Input() rateRecipe: number;
   @Input() isSelected: boolean;
+  @Input() isRatedRecipe: boolean;
   @Output() recipeSelected = new EventEmitter<Recipe>();
 
+  constructor() {}
 
- constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   onSelectRecipe(): void {
-    this.recipeSelected.emit(this.recipe);
+    // this.isSelected = true;
+    this.recipeSelected.emit(this.recipeRecipe);
   }
+
+  onRateRecipe(): void {}
 }

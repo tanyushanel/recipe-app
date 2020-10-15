@@ -4,25 +4,24 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  @Input() recipeHome: Recipe;
+  @Input() rateHome: number;
+  @Input() isRatedHome: boolean;
 
-  @Input() recipe: Recipe;
-  @Input() rate: number;
-  @Input() isCurrent: boolean;
   recipeList = this.recipeService.recipes;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService) {}
 
-  ngOnInit(): void { }
-  
+  ngOnInit(): void {}
+
   onRecipeSelected(event): void {
-    this.recipe = event;
-    
+    this.recipeHome = event;
   }
-  
-  onRateChange(event): void {
-    this.rate = event;
+
+  onChangeRate(event): void {
+    this.rateHome = event;
   }
 }

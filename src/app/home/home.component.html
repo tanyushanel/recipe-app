@@ -5,12 +5,13 @@
         <app-search></app-search>
     </header>
     <h2>RecipeApp</h2>
-    <app-slider (recipeSelected)="onRecipeSelected($event)"
-                [rate]="rate"></app-slider>
+    <app-slider (sliderRecipeSelected)="onRecipeSelected($event)"
+                [rateSlider]="rateHome"
+                [isRatedSlider]="isRatedHome"></app-slider>
 
     <main class="recipe-desc">
-        <app-current-recipe [recipe]="recipe"
-                            (rateChange)="onRateChange($event)"></app-current-recipe>
+        <app-current-recipe [recipeCurrent]="recipeHome"
+                            (rateChangedCurrent)="onChangeRate($event)"></app-current-recipe>
 
     </main>
 

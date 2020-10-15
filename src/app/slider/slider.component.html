@@ -1,11 +1,12 @@
 <div class="recipe-list">
 
     <app-recipe class="recipe-item"
-                [recipe]="item"
+                [recipeRecipe]="item"
                 (recipeSelected)="onSelectRecipe($event)"
                 *ngFor="let item of recipeList"
-                [rate]="rate"
-                [isSelected]="item == selectedRecipe">
+                [rateRecipe]="rateSlider"
+                [isSelected]="item === selectedRecipe"
+                [isRatedRecipe]="isRatedSlider">
 
     </app-recipe>
 </div>
