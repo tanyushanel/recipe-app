@@ -18,9 +18,7 @@ export class RecipeComponent implements OnInit {
   ngOnInit(): void {}
 
   onSelectRecipe(): void {
-    // this.isSelected = true;
+    this.isSelected = true;
     this.recipeSelected.emit(this.recipeRecipe);
   }
-
-  onRateRecipe(): void {}
 }

@@ -10,7 +10,7 @@ export class CurrentRecipeComponent implements OnInit {
   @Input() recipeCurrent: Recipe;
   @Output() rateChangedCurrent = new EventEmitter<number>();
 
-  rateCurrent: number;
+  @Input() rateCurrent: number;
   isRatedCurrent: boolean;
 
   constructor(private recipeService: RecipeService) {}
@@ -20,8 +20,9 @@ export class CurrentRecipeComponent implements OnInit {
   }
 
   onChangeRate(i: number): void {
+    this.isRatedCurrent = true;
+    this.recipeCurrent.rating = i;
     this.rateCurrent = i;
-    // this.isRatedCurrent = true;
     this.rateChangedCurrent.emit(this.rateCurrent);
   }
 }

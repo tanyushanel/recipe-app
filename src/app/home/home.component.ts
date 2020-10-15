@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
 
   onRecipeSelected(event): void {
     this.recipeHome = event;
+    this.rateHome = this.recipeHome.rating;
   }
 
   onChangeRate(event): void {

@@ -11,7 +11,8 @@
 
     <main class="recipe-desc">
         <app-current-recipe [recipeCurrent]="recipeHome"
-                            (rateChangedCurrent)="onChangeRate($event)"></app-current-recipe>
+                            (rateChangedCurrent)="onChangeRate($event)"
+                            [rateCurrent]="recipeHome ? recipeHome.rating : ''"></app-current-recipe>
 
     </main>
 

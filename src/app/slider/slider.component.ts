@@ -11,6 +11,7 @@ export class SliderComponent implements OnInit {
   @Input() rateSlider: number;
   @Input() isRatedSlider: boolean;
   @Output() sliderRecipeSelected = new EventEmitter<Recipe>();
+  @Output() sliderRating = new EventEmitter<number>();
 
   selectedRecipe: Recipe;
   recipeList = this.recipeService.recipes;

@@ -5,8 +5,14 @@
     <div class="photo-wrapper">
         <app-recipe-image [recipe]="recipeRecipe"></app-recipe-image>
     </div>
-    <div class="rating">
+    <div *ngIf="isSelected"
+         class="rating">
         <i class="material-icons"
-           *ngFor="let i of [1,2,3,4,5]">{{ i <= rateRecipe ? "star" : "star_border" }}</i>
+           *ngFor="let i of [1,2,3,4,5]">{{ i <= rateRecipe ? "star" : ""  }}</i>
+    </div>
+    <div *ngIf="!isSelected"
+         class="rating">
+        <i class="material-icons"
+           *ngFor="let i of [1,2,3,4,5]">{{ i <= recipeRecipe.rating ? "star" : ""  }}</i>
     </div>
 </div>
