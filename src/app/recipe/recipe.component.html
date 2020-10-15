@@ -1,5 +1,6 @@
 <div class="recipe-container"
-     (click)="onRecipeSelected()">
+     [class.current]="isSelected"
+     (click)="onSelectRecipe()">
     <p class="title">{{ recipe.title }}</p>
     <div class="photo-wrapper">
         <app-recipe-image [recipe]="recipe"></app-recipe-image>

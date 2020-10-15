@@ -10,8 +10,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SliderComponent implements OnInit {
 
-  @Output() recipeSelected = new EventEmitter<Recipe>();
   @Input() rate: number;
+  @Output() recipeSelected = new EventEmitter<Recipe>();
+
+  selectedRecipe: Recipe;
   recipeList = this.recipeService.recipes;
   width: string;
   height: string;
@@ -26,7 +28,8 @@ export class SliderComponent implements OnInit {
     return this.recipeList;
   }
 
-  onRecipeSelected(event): void {
+  onSelectRecipe(event): void {
+    this.selectedRecipe = event;
     this.recipeSelected.emit(event);
   }
 

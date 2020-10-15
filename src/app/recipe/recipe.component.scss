@@ -2,7 +2,6 @@
   font-size: 70%;
   margin: 0.25rem;
   color: #808080;
-  
 }
 
 i {
@@ -12,4 +11,9 @@ i {
   color: #808080;
   cursor: pointer;
   font-size: 80%;
+}
+
+.current {
+  background: #d3d3d3;
+  border-radius: 0.25rem;
 }

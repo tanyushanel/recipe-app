@@ -10,10 +10,7 @@ export class CurrentRecipeComponent implements OnInit {
 
   @Input() recipe: Recipe;
   @Input() rate: number;
-
   @Output() rateChange = new EventEmitter<number>();
-
-
 
   constructor(private recipeService: RecipeService) { }
 
@@ -21,9 +18,8 @@ export class CurrentRecipeComponent implements OnInit {
     this.recipe = this.recipeService.randomRecipe;
   }
 
-  changeRate(i): void {
+  changeRate(i: number): void {
     this.rate = i;
-
     this.rateChange.emit(this.rate);
   }
 }

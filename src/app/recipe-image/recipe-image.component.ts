@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Recipe, RecipeService } from '../recipe.service';
+import { Recipe} from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-image',
@@ -12,7 +12,7 @@ export class RecipeImageComponent implements OnInit {
   width: string;
   height: string;
 
- constructor(private recipeService: RecipeService) { }
+ constructor() { }
 
   ngOnInit(): void {}
 
