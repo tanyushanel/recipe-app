@@ -25,6 +25,9 @@ export class SliderComponent implements OnInit {
   }
 
   showRecipeList(): Recipe[] {
+    this.recipeList.forEach(
+      (item) => (item.rating = +localStorage.getItem(item.id.toString()))
+    );
     return this.recipeList;
   }
 

@@ -24,5 +24,10 @@ export class HomeComponent implements OnInit {
 
   onChangeRate(event): void {
     this.rateHome = event;
+
+    localStorage.setItem(
+      this.recipeHome.id.toString(),
+      this.recipeHome.rating.toString()
+    );
   }
 }
