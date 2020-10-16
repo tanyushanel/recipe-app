@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { SliderComponent } from './slider/slider.component';
 import { HomeComponent } from './home/home.component';
 import { CurrentRecipeComponent } from './current-recipe/current-recipe.component';
 import { RecipeImageComponent } from './recipe-image/recipe-image.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,10 @@ import {MatIconModule} from '@angular/material/icon';
     SliderComponent,
     HomeComponent,
     CurrentRecipeComponent,
-    RecipeImageComponent
+    RecipeImageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatIconModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, MatIconModule, DragScrollModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

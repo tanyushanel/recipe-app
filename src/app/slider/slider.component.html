@@ -1,11 +1,13 @@
 <div class="recipe-list">
-
-    <app-recipe class="recipe-item"
-                [recipeRecipe]="item"
-                (recipeSelected)="onSelectRecipe($event)"
-                *ngFor="let item of recipeList"
-                [rateRecipe]="rateSlider"
-                [isSelected]="item === selectedRecipe">
-
-    </app-recipe>
+    <drag-scroll>
+        <app-recipe drag-scroll-item
+                    class="recipe-item"
+                    [recipeRecipe]="item"
+                    (recipeSelected)="onSelectRecipe($event)"
+                    *ngFor="let item of recipeList"
+                    [rateRecipe]="rateSlider"
+                    [isSelected]="item === selectedRecipe"
+                    scrollbar-hidden="true">
+        </app-recipe>
+    </drag-scroll>
 </div>
