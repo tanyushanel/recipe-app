@@ -5,8 +5,7 @@
                 (recipeSelected)="onSelectRecipe($event)"
                 *ngFor="let item of recipeList"
                 [rateRecipe]="rateSlider"
-                [isSelected]="item === selectedRecipe"
-                [isRatedRecipe]="isRatedSlider">
+                [isSelected]="item === selectedRecipe">
 
     </app-recipe>
 </div>

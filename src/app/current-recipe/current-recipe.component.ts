@@ -11,16 +11,15 @@ export class CurrentRecipeComponent implements OnInit {
   @Output() rateChangedCurrent = new EventEmitter<number>();
 
   @Input() rateCurrent: number;
-  isRatedCurrent: boolean;
 
   constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.recipeCurrent = this.recipeService.randomRecipe;
+    this.rateCurrent = +localStorage.getItem(this.recipeCurrent.id.toString());
   }
 
   onChangeRate(i: number): void {
-    this.isRatedCurrent = true;
     this.recipeCurrent.rating = i;
     this.rateCurrent = i;
     this.rateChangedCurrent.emit(this.rateCurrent);

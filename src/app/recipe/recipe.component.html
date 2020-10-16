@@ -6,12 +6,12 @@
         <app-recipe-image [recipe]="recipeRecipe"></app-recipe-image>
     </div>
     <div *ngIf="isSelected"
-         class="rating">
+         class="rating and-selected">
         <i class="material-icons"
            *ngFor="let i of [1,2,3,4,5]">{{ i <= rateRecipe ? "star" : ""  }}</i>
     </div>
     <div *ngIf="!isSelected"
-         class="rating">
+         class="rating not-selected">
         <i class="material-icons"
            *ngFor="let i of [1,2,3,4,5]">{{ i <= recipeRecipe.rating ? "star" : ""  }}</i>
     </div>

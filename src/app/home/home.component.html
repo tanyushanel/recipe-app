@@ -7,12 +7,12 @@
     <h2>RecipeApp</h2>
     <app-slider (sliderRecipeSelected)="onRecipeSelected($event)"
                 [rateSlider]="rateHome"
-                [isRatedSlider]="isRatedHome"></app-slider>
+                [selectedRecipe]="recipeHome"></app-slider>
 
     <main class="recipe-desc">
         <app-current-recipe [recipeCurrent]="recipeHome"
                             (rateChangedCurrent)="onChangeRate($event)"
-                            [rateCurrent]="recipeHome ? recipeHome.rating : ''"></app-current-recipe>
+                            [rateCurrent]="recipeHome.rating"></app-current-recipe>
 
     </main>
 

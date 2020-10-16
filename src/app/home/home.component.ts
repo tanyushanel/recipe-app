@@ -9,13 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   @Input() recipeHome: Recipe;
   @Input() rateHome: number;
-  @Input() isRatedHome: boolean;
 
   recipeList = this.recipeService.recipes;
 
   constructor(private recipeService: RecipeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recipeHome = this.recipeService.randomRecipe;
+    this.rateHome = this.recipeHome.rating;
+  }
 
   onRecipeSelected(event): void {
     this.recipeHome = event;
@@ -24,10 +26,6 @@ export class HomeComponent implements OnInit {
 
   onChangeRate(event): void {
     this.rateHome = event;
-
-    localStorage.setItem(
-      this.recipeHome.id.toString(),
-      this.recipeHome.rating.toString()
-    );
+    this.recipeService.saveRatingToLocalStore(this.recipeHome);
   }
 }

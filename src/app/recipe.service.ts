@@ -82,5 +82,13 @@ export class RecipeService {
   ];
   randomRecipe = this.recipes[Math.floor(Math.random() * this.recipes.length)];
 
-  constructor() {}
+  constructor() {
+    this.recipes.forEach(
+      (item) => (item.rating = +localStorage.getItem(item.id.toString()))
+    );
+  }
+
+  saveRatingToLocalStore(current: Recipe): void {
+    localStorage.setItem(current.id.toString(), current.rating.toString());
+  }
 }

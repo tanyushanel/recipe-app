@@ -10,7 +10,7 @@ export class RecipeComponent implements OnInit {
   @Input() recipeRecipe: Recipe;
   @Input() rateRecipe: number;
   @Input() isSelected: boolean;
-  @Input() isRatedRecipe: boolean;
+
   @Output() recipeSelected = new EventEmitter<Recipe>();
 
   constructor() {}

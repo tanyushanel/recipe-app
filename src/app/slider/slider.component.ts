@@ -9,11 +9,10 @@ import { Recipe } from '../recipe.service';
 })
 export class SliderComponent implements OnInit {
   @Input() rateSlider: number;
-  @Input() isRatedSlider: boolean;
   @Output() sliderRecipeSelected = new EventEmitter<Recipe>();
   @Output() sliderRating = new EventEmitter<number>();
 
-  selectedRecipe: Recipe;
+  @Input() selectedRecipe: Recipe;
   recipeList = this.recipeService.recipes;
   width: string;
   height: string;
@@ -25,9 +24,6 @@ export class SliderComponent implements OnInit {
   }
 
   showRecipeList(): Recipe[] {
-    this.recipeList.forEach(
-      (item) => (item.rating = +localStorage.getItem(item.id.toString()))
-    );
     return this.recipeList;
   }
 
