@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   @Input() recipeHome: Recipe;
   @Input() rateHome: number;
+  @Input() isCurrent: boolean;
 
   recipeList = this.recipeService.recipes;
 

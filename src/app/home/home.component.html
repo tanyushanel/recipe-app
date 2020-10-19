@@ -10,7 +10,9 @@
                 [selectedRecipe]="recipeHome"></app-slider>
 
     <main class="recipe-desc">
-        <app-current-recipe [recipeCurrent]="recipeHome"
+
+        <app-current-recipe [recipe]="recipeHome"
+                            [recipeCurrent]="recipeHome"
                             (rateChangedCurrent)="onChangeRate($event)"
                             [rateCurrent]="recipeHome.rating"></app-current-recipe>
 

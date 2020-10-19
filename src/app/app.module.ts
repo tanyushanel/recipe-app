@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { CurrentRecipeComponent } from './current-recipe/current-recipe.component';
 import { RecipeImageComponent } from './recipe-image/recipe-image.component';
 import { MatIconModule } from '@angular/material/icon';
+import { SearchedListComponent } from './searched-list/searched-list.component';
+import { RecipePreviewComponent } from './recipe-preview/recipe-preview.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
     HomeComponent,
     CurrentRecipeComponent,
     RecipeImageComponent,
+    SearchedListComponent,
+    RecipePreviewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MatIconModule, DragScrollModule],
   providers: [],

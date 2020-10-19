@@ -7,15 +7,15 @@ import { Recipe, RecipeService } from '../recipe.service';
   styleUrls: ['./current-recipe.component.scss'],
 })
 export class CurrentRecipeComponent implements OnInit {
+  @Input() recipe: Recipe;
   @Input() recipeCurrent: Recipe;
-  @Output() rateChangedCurrent = new EventEmitter<number>();
-
   @Input() rateCurrent: number;
+  @Output() rateChangedCurrent = new EventEmitter<number>();
 
   constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.recipeCurrent = this.recipeService.randomRecipe;
+    this.recipeCurrent = this.recipe;
     this.rateCurrent = +localStorage.getItem(this.recipeCurrent.id.toString());
   }
 

@@ -1,0 +1,18 @@
+<div class="main-container">
+
+    <header class="recipe-header">
+        <app-menu></app-menu>
+        <app-search></app-search>
+    </header>
+    <h2>RecipeApp</h2>
+
+    <app-current-recipe *ngFor="let item of searchedList"
+                        [recipe]="item"
+                        (click)="goTo(item)">{{item.title}}</app-current-recipe>
+
+
+
+
+    <footer></footer>
+
+</div>
