@@ -4,7 +4,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background: url(assets/backgr.jpg) no-repeat #d3dfe5;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .material-icons {
@@ -31,5 +31,7 @@ body {
   cursor: pointer;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
