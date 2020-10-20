@@ -1,25 +1,15 @@
 <div class="main-container">
-
     <header class="recipe-header">
         <app-menu></app-menu>
         <app-search></app-search>
     </header>
     <h2>RecipeApp</h2>
-    <app-slider (sliderRecipeSelected)="onRecipeSelected($event)"
-                [selectedRecipe]="recipePreview"></app-slider>
-
-
 
     <main class="recipe-container recipe-desc">
         <div class="photo-wrapper">
             <app-recipe-image [recipe]="recipePreview"></app-recipe-image>
         </div>
-
-
     </main>
-
-
-
     <footer></footer>
 
 </div>

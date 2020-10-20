@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Recipe } from '../recipe.service';
+import { Recipe, RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-preview',
@@ -8,13 +8,15 @@ import { Recipe } from '../recipe.service';
   styleUrls: ['./recipe-preview.component.scss'],
 })
 export class RecipePreviewComponent implements OnInit {
-  @Input() recipePreview: Recipe;
+  recipePreview: Recipe;
+  id: number;
 
-  constructor() {}
+  constructor(private recipeService: RecipeService, private router: Router) {}
 
-  ngOnInit(): void {}
-
-  onRecipeSelected(event): void {
-    this.recipePreview = event;
+  ngOnInit(): void {
+    this.id = this.router.snapshot.paramMap.get('id');
+    this.recipePreview = this.recipeService.recipes.find(
+      (item) => item.id === this.id
+    );
   }
 }
