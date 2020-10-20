@@ -8,7 +8,7 @@
     <div *ngIf="isSelected"
          class="rating and-selected">
         <i class="material-icons"
-           *ngFor="let i of [1,2,3,4,5]">{{ i <= rateRecipe ? "star" : ""  }}</i>
+           *ngFor="let i of [1,2,3,4,5]">{{ i <= recipeRecipe.rating ? "star" : ""  }}</i>
     </div>
     <div *ngIf="!isSelected"
          class="rating not-selected">

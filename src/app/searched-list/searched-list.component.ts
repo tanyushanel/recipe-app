@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Recipe, RecipeService } from '../recipe.service';
 
@@ -8,6 +8,7 @@ import { Recipe, RecipeService } from '../recipe.service';
   styleUrls: ['./searched-list.component.scss'],
 })
 export class SearchedListComponent implements OnInit {
+  @Input() clickedRecipe: Recipe;
   searchedList = this.recipeService.recipes.filter(
     (recipe) => recipe.rating > 2
   );
@@ -16,7 +17,13 @@ export class SearchedListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goTo(recipe): void {
-    this.router.navigate([recipe]);
+  goTo(clickedRecipe): void {
+    console.log(clickedRecipe);
+    this.router.navigate(['recipe']);
+  }
+
+  onChangeRate(clickedRecipe, event): void {
+    clickedRecipe.rating = event;
+    this.recipeService.saveRatingToLocalStore(clickedRecipe);
   }
 }

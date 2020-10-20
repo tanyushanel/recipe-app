@@ -14,5 +14,7 @@ export class RecipePreviewComponent implements OnInit {
 
   ngOnInit(): void {}
 
-
+  onRecipeSelected(event): void {
+    this.recipePreview = event;
+  }
 }

@@ -1,8 +1,52 @@
-.main-container {
-  width: 4rem;
-  height: 4rem;
+.recipe-container {
+  position: table;
 }
+
 .recipe-desc {
-  width: 3rem;
-  height: 3rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.desc {
+  vertical-align: top;
+
+  font-size: 70%;
+  margin: 0.25rem;
+  color: #808080;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+  margin-left: 5rem;
+}
+
+.cell {
+  display: table-cell;
+  padding: 1rem;
+}
+.row {
+  display: table-row;
+}
+
+.photo-wrapper {
+  width: 10rem;
+  height: 10rem;
+}
+
+.rating {
+  float: right;
+}
+
+i {
+  right: 5px;
+  bottom: 5px;
+  color: #808080;
+  cursor: pointer;
 }

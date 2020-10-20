@@ -1,6 +1,14 @@
 .recipe-container {
   position: table;
 }
+
+.recipe-desc {
+  border: 1px solid #d3d3d3;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
 h4 {
   margin: 0;
 }

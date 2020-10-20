@@ -8,6 +8,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: url(assets/backgr.jpg) no-repeat #d3dfe5;
   background-size: cover;
+  overflow: auto;
 }
 
 .material-icons {
@@ -60,5 +61,5 @@ ul {
   border: 1px solid #d3d3d3;
   border-radius: 0.25rem;
   padding: 0.5rem;
-  margin: 1rem;
+  margin: 1rem 0;
 }

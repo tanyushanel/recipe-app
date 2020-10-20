@@ -7,12 +7,7 @@
     <h2>RecipeApp</h2>
 
     <app-current-recipe *ngFor="let item of searchedList"
-                        [recipe]="item"
-                        (click)="goTo(item)">{{item.title}}</app-current-recipe>
-
-
-
-
-    <footer></footer>
-
+                        [recipeCurrent]="item"
+                        (click)="goTo(item)"
+                        (rateChangedCurrent)="onChangeRate(item, $event)">{{item.title}}</app-current-recipe>
 </div>

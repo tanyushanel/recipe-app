@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Recipe, RecipeService } from '../recipe.service';
+import { Router } from '@angular/router';
+import { Recipe } from '../recipe.service';
 
 @Component({
   selector: 'app-current-recipe',
@@ -7,21 +8,19 @@ import { Recipe, RecipeService } from '../recipe.service';
   styleUrls: ['./current-recipe.component.scss'],
 })
 export class CurrentRecipeComponent implements OnInit {
-  @Input() recipe: Recipe;
   @Input() recipeCurrent: Recipe;
-  @Input() rateCurrent: number;
   @Output() rateChangedCurrent = new EventEmitter<number>();
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    this.recipeCurrent = this.recipe;
-    this.rateCurrent = +localStorage.getItem(this.recipeCurrent.id.toString());
+  ngOnInit(): void {}
+
+  goTo(recipeCurrent): void {
+    this.router.navigate(['preview']);
   }
 
   onChangeRate(i: number): void {
     this.recipeCurrent.rating = i;
-    this.rateCurrent = i;
-    this.rateChangedCurrent.emit(this.rateCurrent);
+    this.rateChangedCurrent.emit(i);
   }
 }

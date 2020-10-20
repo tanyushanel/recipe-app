@@ -8,7 +8,6 @@ import { Recipe } from '../recipe.service';
   styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent implements OnInit {
-  @Input() rateSlider: number;
   @Output() sliderRecipeSelected = new EventEmitter<Recipe>();
   @Output() sliderRating = new EventEmitter<number>();
   @Input() selectedRecipe: Recipe;

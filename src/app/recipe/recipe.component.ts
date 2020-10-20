@@ -8,7 +8,6 @@ import { Recipe } from '../recipe.service';
 })
 export class RecipeComponent implements OnInit {
   @Input() recipeRecipe: Recipe;
-  @Input() rateRecipe: number;
   @Input() isSelected: boolean;
 
   @Output() recipeSelected = new EventEmitter<Recipe>();
