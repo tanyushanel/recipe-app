@@ -1,9 +1,6 @@
 <div class="recipe-container recipe-desc">
-    <div class="rating">
-        <i class="material-icons"
-           *ngFor="let i of [1,2,3,4,5]"
-           (click)="onChangeRate(i)">{{ i <= recipeCurrent.rating ? "star" : "star_border" }}</i>
-    </div>
+    <app-rating [recipe]="recipeCurrent"></app-rating>
+
     <h4 class="title"
         (click)="onGoTo($event)">{{ recipeCurrent.title }}</h4>
 

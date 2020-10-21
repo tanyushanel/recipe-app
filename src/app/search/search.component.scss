@@ -1,21 +1,13 @@
 .search-container {
   position: relative;
   float: right;
-}
-input {
-  display: inline-block;
-  border: none;
+  font-size: 80%;
 }
 
-input:focus {
-  outline: none;
-  border: 1px solid #d3d3d3;
-}
-
-i {
+.search-icon {
   cursor: pointer;
   color: #808080;
   position: absolute;
   right: 0;
-  top: 5px;
+  top: 0.25rem;
 }

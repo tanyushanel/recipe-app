@@ -6,11 +6,7 @@
     <app-logo></app-logo>
 
     <main class="recipe-container recipe-desc">
-        <div class="rating">
-            <i class="material-icons"
-               *ngFor="let i of [1,2,3,4,5]"
-               (click)="onChangeRate(i)">{{ i <= recipePreview.rating ? "star" : "star_border" }}</i>
-        </div>
+        <app-rating [recipe]="recipePreview"></app-rating>
         <h4>{{ recipePreview.title }}</h4>
 
         <div class="cell">

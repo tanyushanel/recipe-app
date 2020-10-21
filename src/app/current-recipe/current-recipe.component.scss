@@ -30,6 +30,7 @@ li {
   display: table-cell;
   padding: 1rem;
 }
+
 .row {
   display: table-row;
 }
@@ -37,15 +38,4 @@ li {
 .photo-wrapper {
   width: 7rem;
   height: 7rem;
-}
-
-.rating {
-  float: right;
-}
-
-i {
-  right: 5px;
-  bottom: 5px;
-  color: #808080;
-  cursor: pointer;
 }

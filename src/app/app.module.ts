@@ -17,6 +17,8 @@ import { RecipePreviewComponent } from './recipe-preview/recipe-preview.componen
 import { LogoComponent } from './logo/logo.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     SearchedListComponent,
     RecipePreviewComponent,
     LogoComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     DragScrollModule,
     MatInputModule,
     MatAutocompleteModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
