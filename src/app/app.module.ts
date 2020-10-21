@@ -14,6 +14,9 @@ import { RecipeImageComponent } from './recipe-image/recipe-image.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchedListComponent } from './searched-list/searched-list.component';
 import { RecipePreviewComponent } from './recipe-preview/recipe-preview.component';
+import { LogoComponent } from './logo/logo.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,16 @@ import { RecipePreviewComponent } from './recipe-preview/recipe-preview.componen
     RecipeImageComponent,
     SearchedListComponent,
     RecipePreviewComponent,
+    LogoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule, DragScrollModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatIconModule,
+    DragScrollModule,
+    MatInputModule,
+    MatAutocompleteModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

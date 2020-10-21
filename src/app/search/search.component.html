@@ -1,4 +1,23 @@
 <div class="search-container">
-    <i class="material-icons">search</i>
-    <input type="text">
+    <input type="search"><i class="material-icons"
+       (onModelChange)="onSearch($event)">search</i>
+
+
+    <!-- <form>
+        <mat-form-field>
+            <input matInput
+                   type="text"
+                   placeholder="Search by Employees"
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto" />
+
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of users"
+                            [value]="option.name + ' ' + option.surname">
+                    {{ option.name + " " + option.surname }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form> -->
+
 </div>

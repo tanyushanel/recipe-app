@@ -73,7 +73,7 @@ export class RecipeService {
     {
       id: 7,
       title: 'Bun',
-      ingredients: ['milk', 'four', 'egg'],
+      ingredients: ['milk', 'flour', 'egg'],
       description: 'Bake it',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVoB3a_65P1uEA5W3EgOyAsCbsmkTmtmVF8Q&usqp=CAU',
@@ -92,7 +92,10 @@ export class RecipeService {
     localStorage.setItem(current.id.toString(), current.rating.toString());
   }
 
-  editRecipe(): void {}
+  editRecipe(recipe): void {
+    const rcp = this.recipes.find((item) => item.id === recipe.id);
+    rcp.description = recipe.description;
+  }
 
   saveRecipe(): void {}
 }

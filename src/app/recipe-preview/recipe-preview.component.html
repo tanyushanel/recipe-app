@@ -3,7 +3,7 @@
         <app-menu></app-menu>
         <app-search></app-search>
     </header>
-    <h2>RecipeApp</h2>
+    <app-logo></app-logo>
 
     <main class="recipe-container recipe-desc">
         <div class="rating">
@@ -18,26 +18,28 @@
                 <app-recipe-image [recipe]="recipePreview"></app-recipe-image>
             </div>
         </div>
+
         <div class="cell desc">
-            <p class="row desc"> {{ recipePreview.ingredients }}
+            <p>
+                <textarea class="row desc">{{ recipePreview.ingredients }}</textarea>
                 <i class="material-icons"
                    (click)="onEditRecipe()">edit</i>
                 <i class="material-icons"
                    (click)="onSaveRecipe()">save</i>
             </p>
 
-            <p class="row desc"> {{ recipePreview.description }}
+
+            <p>
+                <textarea class="row desc">{{ recipePreview.description }}</textarea>
+
                 <i class="material-icons"
                    (click)="onEditRecipe()">edit</i>
                 <i class="material-icons"
                    (click)="onSaveRecipe()">save</i>
             </p>
+
 
         </div>
-
-
-
-
     </main>
 
     <footer></footer>

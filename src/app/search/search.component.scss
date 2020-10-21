@@ -6,9 +6,16 @@ input {
   display: inline-block;
   border: none;
 }
+
+input:focus {
+  outline: none;
+  border: 1px solid #d3d3d3;
+}
+
 i {
   cursor: pointer;
   color: #808080;
   position: absolute;
   right: 0;
+  top: 5px;
 }

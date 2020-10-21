@@ -35,8 +35,8 @@ li {
 }
 
 .photo-wrapper {
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 12rem;
 }
 
 .rating {
@@ -51,7 +51,27 @@ i {
   cursor: pointer;
 }
 
-p {
+input,
+textarea {
   display: inline-block;
+  white-space: normal;
+  word-break: break-all;
+  resize: none;
   width: 8rem;
+  height: 5rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  border: 1px solid #d3d3d3;
+}
+
+input:focus,
+textarea:focus {
+  resize: none;
+  outline: none;
+  white-space: normal;
+  height: 5rem;
+}
+
+p {
+  white-space: nowrap;
 }
