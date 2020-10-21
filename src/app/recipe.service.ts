@@ -91,4 +91,8 @@ export class RecipeService {
   saveRatingToLocalStore(current: Recipe): void {
     localStorage.setItem(current.id.toString(), current.rating.toString());
   }
+
+  editRecipe(): void {}
+
+  saveRecipe(): void {}
 }

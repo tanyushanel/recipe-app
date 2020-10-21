@@ -6,10 +6,39 @@
     <h2>RecipeApp</h2>
 
     <main class="recipe-container recipe-desc">
-        <div class="photo-wrapper">
-            <app-recipe-image [recipe]="recipePreview"></app-recipe-image>
+        <div class="rating">
+            <i class="material-icons"
+               *ngFor="let i of [1,2,3,4,5]"
+               (click)="onChangeRate(i)">{{ i <= recipePreview.rating ? "star" : "star_border" }}</i>
         </div>
-    </main>
-    <footer></footer>
+        <h4>{{ recipePreview.title }}</h4>
 
+        <div class="cell">
+            <div class="photo-wrapper">
+                <app-recipe-image [recipe]="recipePreview"></app-recipe-image>
+            </div>
+        </div>
+        <div class="cell desc">
+            <p class="row desc"> {{ recipePreview.ingredients }}
+                <i class="material-icons"
+                   (click)="onEditRecipe()">edit</i>
+                <i class="material-icons"
+                   (click)="onSaveRecipe()">save</i>
+            </p>
+
+            <p class="row desc"> {{ recipePreview.description }}
+                <i class="material-icons"
+                   (click)="onEditRecipe()">edit</i>
+                <i class="material-icons"
+                   (click)="onSaveRecipe()">save</i>
+            </p>
+
+        </div>
+
+
+
+
+    </main>
+
+    <footer></footer>
 </div>

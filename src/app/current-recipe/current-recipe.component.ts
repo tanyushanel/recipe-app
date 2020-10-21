@@ -16,7 +16,7 @@ export class CurrentRecipeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goTo(recipeCurrent: Recipe): void {
+  onGoTo(recipeCurrent: Recipe): void {
     this.router.navigate(['preview', { id: recipeCurrent.id }]);
     this.clickTitle.emit();
   }

@@ -11,7 +11,8 @@
 
 
     <app-current-recipe [recipeCurrent]="recipeHome"
-                        (rateChangedCurrent)="onChangeRate($event)"></app-current-recipe>
+                        (rateChangedCurrent)="onChangeRate($event)"
+                        (clickTitle)="goTo(recipeHome)"></app-current-recipe>
 
 
 

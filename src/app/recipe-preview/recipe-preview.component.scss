@@ -15,11 +15,9 @@ h4 {
 
 .desc {
   vertical-align: top;
-
-  font-size: 70%;
+  font-size: 80%;
   margin: 0.25rem;
   color: #808080;
-  cursor: pointer;
 }
 
 li {
@@ -29,10 +27,11 @@ li {
 
 .cell {
   display: table-cell;
-  padding: 1rem;
+
+  padding: 0.25rem;
 }
 .row {
-  display: table-row;
+  white-space: nowrap;
 }
 
 .photo-wrapper {
@@ -45,8 +44,14 @@ li {
 }
 
 i {
+  display: inline-block;
   right: 5px;
   bottom: 5px;
   color: #808080;
   cursor: pointer;
+}
+
+p {
+  display: inline-block;
+  width: 8rem;
 }

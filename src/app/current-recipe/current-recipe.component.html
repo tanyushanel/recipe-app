@@ -1,16 +1,17 @@
-<div class="recipe-container recipe-desc"
-     (click)="goTo($event)">
+<div class="recipe-container recipe-desc">
     <div class="rating">
         <i class="material-icons"
            *ngFor="let i of [1,2,3,4,5]"
            (click)="onChangeRate(i)">{{ i <= recipeCurrent.rating ? "star" : "star_border" }}</i>
     </div>
-    <h4 class="title">{{ recipeCurrent.title }}</h4>
+    <h4 class="title"
+        (click)="onGoTo($event)">{{ recipeCurrent.title }}</h4>
 
     <div class="desc-container">
         <div class="cell">
             <div class="photo-wrapper">
-                <app-recipe-image [recipe]="recipeCurrent"></app-recipe-image>
+                <app-recipe-image [recipe]="recipeCurrent"
+                                  (click)="onGoTo($event)"></app-recipe-image>
             </div>
         </div>
 
