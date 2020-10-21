@@ -1,15 +1,22 @@
-<mat-form-field class="search-container">
-    <input matInput
-           type="search"
-           placeholder="Search recipe..."
-           [autocomplete]="auto">
-    <i class="material-icons search-icon"
-       routerLink="/searched">search</i>
+<form class="search-container"
+      (ngSubmit)="onSearch($event)"
+      #searchForm>
+    <mat-form-field>
+        <input matInput
+               type="text"
+               [(ngModel)]="typingValue"
+               (ngModelChange)="doFilter($event)"
+               placeholder="Search recipe..."
+               [autocomplete]="auto"
+               name="searchForm">
+        <i class="material-icons search-icon"
+           routerLink="/searched">search</i>
 
-    <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of "
-                    [value]="option.name + ' ' + option.surname">
-            {{ option.name + " " + option.surname }}
-        </mat-option>
-    </mat-autocomplete>
-</mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions"
+                        [value]="option">
+                {{ option }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>

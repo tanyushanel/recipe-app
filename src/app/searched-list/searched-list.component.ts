@@ -10,8 +10,10 @@ import { Recipe, RecipeService } from '../recipe.service';
 export class SearchedListComponent implements OnInit {
   clickedRecipe: Recipe;
   searchedList = this.recipeService.recipes.filter(
-    (recipe) => recipe.rating > 2
+    (recipe) => recipe.title === this.recipeTitle
   );
+
+  @Input() recipeTitle: string;
   @Output() id = new EventEmitter<number>();
 
   constructor(private recipeService: RecipeService, private router: Router) {}
