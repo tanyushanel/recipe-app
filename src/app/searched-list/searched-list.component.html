@@ -6,8 +6,7 @@
     </header>
     <app-logo></app-logo>
 
-    <app-current-recipe *ngFor="let item of searchedList"
+    <app-current-recipe *ngFor=" let item of searchedList"
                         [recipeCurrent]="item"
-                        (clickTitle)="goTo(item)"
                         (rateChangedCurrent)="onChangeRate(item, $event)">{{item.title}}</app-current-recipe>
 </div>

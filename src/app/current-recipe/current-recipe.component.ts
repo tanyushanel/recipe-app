@@ -10,15 +10,13 @@ import { Recipe } from '../recipe.service';
 export class CurrentRecipeComponent implements OnInit {
   @Input() recipeCurrent: Recipe;
   @Output() rateChangedCurrent = new EventEmitter<number>();
-  @Output() clickTitle = new EventEmitter<void>();
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  onGoTo(recipeCurrent: Recipe): void {
+  onGoToClick(recipeCurrent: Recipe): void {
     this.router.navigate(['preview', { id: recipeCurrent.id }]);
-    this.clickTitle.emit();
   }
 
   onChangeRate(i: number): void {

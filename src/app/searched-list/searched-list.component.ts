@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Recipe, RecipeService } from '../recipe.service';
 
 @Component({
@@ -9,16 +10,21 @@ import { Recipe, RecipeService } from '../recipe.service';
 })
 export class SearchedListComponent implements OnInit {
   clickedRecipe: Recipe;
-  searchedList = this.recipeService.recipes.filter(
-    (recipe) => recipe.title === this.recipeTitle
-  );
-
+  searchedList = [];
   @Input() recipeTitle: string;
-  @Output() id = new EventEmitter<number>();
 
-  constructor(private recipeService: RecipeService, private router: Router) {}
+  constructor(
+    private recipeService: RecipeService,
+    private router: Router,
+    private activateRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const searchText = this.activateRoute.snapshot.paramMap.get('searchText');
+    this.searchedList = this.recipeService.recipes.filter(
+      (item) => item.title === searchText
+    );
+  }
 
   goTo(clickedRecipe: Recipe): number {
     console.log(clickedRecipe);

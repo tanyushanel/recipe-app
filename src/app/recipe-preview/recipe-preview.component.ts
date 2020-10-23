@@ -9,8 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
-  id: number;
-  @Output() rateChangedCurrent = new EventEmitter<number>();
 
   constructor(
     private recipeService: RecipeService,
@@ -18,18 +16,13 @@ export class RecipePreviewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = +this.activateRoute.snapshot.paramMap.get('id');
+    const id = +this.activateRoute.snapshot.paramMap.get('id');
     this.recipePreview = this.recipeService.recipes.find(
-      (item) => item.id === this.id
+      (item) => item.id === id
     );
   }
 
   onEditRecipe(): void {}
 
   onSaveRecipe(): void {}
-
-  onChangeRate(i: number): void {
-    this.recipePreview.rating = i;
-    this.rateChangedCurrent.emit(i);
-  }
 }

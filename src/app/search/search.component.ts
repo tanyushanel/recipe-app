@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../recipe.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { Recipe, RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +12,7 @@ export class SearchComponent implements OnInit {
   options: string[];
   filteredOptions: string[];
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService, private router: Router) {
     this.options = this.recipeService.recipes.map((item) => item.title);
   }
 
@@ -24,5 +25,7 @@ export class SearchComponent implements OnInit {
     );
   }
 
-  onSearch(value: Event): void {}
+  onSearchClick(value): void {
+    this.router.navigate(['searched', { searchText: value }]);
+  }
 }
