@@ -9,7 +9,7 @@
                [autocomplete]="auto"
                name="searchForm">
         <i class="material-icons search-icon"
-           (click)="onSearchClick(typingValue)">search</i>
+           (click)="onSearchClick()">search</i>
 
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let option of filteredOptions"

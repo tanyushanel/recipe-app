@@ -11,7 +11,8 @@ import { Recipe, RecipeService } from '../recipe.service';
 export class SearchedListComponent implements OnInit {
   clickedRecipe: Recipe;
   searchedList = [];
-  @Input() recipeTitle: string;
+  searchText = '';
+  recipeTitle: string;
 
   constructor(
     private recipeService: RecipeService,
@@ -20,9 +21,9 @@ export class SearchedListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const searchText = this.activateRoute.snapshot.paramMap.get('searchText');
+    this.searchText = this.activateRoute.snapshot.paramMap.get('searchText');
     this.searchedList = this.recipeService.recipes.filter(
-      (item) => item.title === searchText
+      (item) => item.title === this.searchText
     );
   }
 

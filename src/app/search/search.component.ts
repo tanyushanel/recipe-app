@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Recipe, RecipeService } from '../recipe.service';
 
@@ -8,9 +8,9 @@ import { Recipe, RecipeService } from '../recipe.service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  typingValue: string;
   options: string[];
   filteredOptions: string[];
+  @Input() typingValue: string;
 
   constructor(private recipeService: RecipeService, private router: Router) {
     this.options = this.recipeService.recipes.map((item) => item.title);
@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
     );
   }
 
-  onSearchClick(value): void {
-    this.router.navigate(['searched', { searchText: value }]);
+  onSearchClick(): void {
+    this.router.navigate([`searched/${this.typingValue}`]);
   }
 }
