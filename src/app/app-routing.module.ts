@@ -8,13 +8,18 @@ import { RecipeComponent } from './recipe/recipe.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipe', component: RecipeComponent },
-  { path: 'searched/:searchText', component: SearchedListComponent },
+  {
+    path: 'searched/:searchText',
+    component: SearchedListComponent,
+    data: {},
+    runGuardsAndResolvers: 'always',
+  },
   { path: 'preview', component: RecipePreviewComponent },
   { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

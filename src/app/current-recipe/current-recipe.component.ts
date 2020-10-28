@@ -15,8 +15,8 @@ export class CurrentRecipeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onGoToClick(recipeCurrent: Recipe): void {
-    this.router.navigate(['preview', { id: recipeCurrent.id }]);
+  onTitleClick(): void {
+    this.router.navigate(['preview', { id: this.recipeCurrent.id }]);
   }
 
   onChangeRate(i: number): void {

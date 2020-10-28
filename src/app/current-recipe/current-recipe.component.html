@@ -2,13 +2,13 @@
     <app-rating [recipe]="recipeCurrent"></app-rating>
 
     <h4 class="title"
-        (click)="onGoToClick($event)">{{ recipeCurrent.title }}</h4>
+        (click)="onTitleClick()">{{ recipeCurrent.title }}</h4>
 
     <div class="desc-container">
         <div class="cell">
             <div class="photo-wrapper">
                 <app-recipe-image [recipe]="recipeCurrent"
-                                  (click)="onGoToClick($event)"></app-recipe-image>
+                                  (click)="onTitleClick()"></app-recipe-image>
             </div>
         </div>
 

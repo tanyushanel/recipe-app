@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.recipeService.saveRatingToLocalStore(this.recipeHome);
   }
 
-  goTo(recipeHome: Recipe): void {
-    this.router.navigate(['preview', { id: recipeHome.id }]);
+  goTo(): void {
+    this.router.navigate(['preview', { id: this.recipeHome.id }]);
   }
 }

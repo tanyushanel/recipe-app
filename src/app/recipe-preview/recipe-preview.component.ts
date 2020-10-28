@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe, RecipeService } from '../recipe.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
+  searchText = '';
 
   constructor(
     private recipeService: RecipeService,

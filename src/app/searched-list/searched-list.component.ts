@@ -21,9 +21,12 @@ export class SearchedListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.searchText = this.activateRoute.snapshot.paramMap.get('searchText');
+    this.searchText = this.activateRoute.snapshot.paramMap
+      .get('searchText')
+      .toLowerCase();
+
     this.searchedList = this.recipeService.recipes.filter(
-      (item) => item.title === this.searchText
+      (item) => item.title.toLowerCase() === this.searchText
     );
   }
 
