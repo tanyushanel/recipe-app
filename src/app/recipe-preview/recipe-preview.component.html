@@ -17,7 +17,10 @@
 
         <div class="cell desc">
             <p>
-                <textarea class="row desc">{{ recipePreview.ingredients }}</textarea>
+                <textarea class="row desc"
+                          [disabled]="isEditEnabled"
+                          [autofocus]="!isEditEnabled"
+                          ngClass>{{ recipePreview.ingredients }}</textarea>
                 <i class="material-icons"
                    (click)="onEditRecipe()">edit</i>
                 <i class="material-icons"
@@ -26,7 +29,8 @@
 
 
             <p>
-                <textarea class="row desc">{{ recipePreview.description }}</textarea>
+                <textarea class="row desc"
+                          [disabled]="isEditEnabled">{{ recipePreview.description }}</textarea>
 
                 <i class="material-icons"
                    (click)="onEditRecipe()">edit</i>

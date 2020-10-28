@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Recipe, RecipeService } from '../recipe.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,6 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
   searchText = '';
+  isEditEnabled = true;
 
   constructor(
     private recipeService: RecipeService,
@@ -23,7 +30,9 @@ export class RecipePreviewComponent implements OnInit {
     );
   }
 
-  onEditRecipe(): void {}
+  onEditRecipe(): void {
+    this.isEditEnabled = false;
+  }
 
   onSaveRecipe(): void {}
 }
