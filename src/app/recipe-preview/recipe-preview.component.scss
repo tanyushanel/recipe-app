@@ -57,21 +57,22 @@ textarea {
   white-space: normal;
   word-break: break-all;
   resize: none;
+  overflow: hidden;
+  border: none;
   width: 8rem;
   height: 5rem;
-  overflow: hidden;
-  border-radius: 0.25rem;
-  border: 1px solid #d3d3d3;
 }
 
 input:focus,
 textarea:focus {
   resize: none;
-  outline: none;
   white-space: normal;
-  height: 5rem;
 }
 
 p {
   white-space: nowrap;
+}
+
+.bordered {
+  outline: 1px solid #d3d3d3;
 }

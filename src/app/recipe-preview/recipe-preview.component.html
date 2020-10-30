@@ -17,23 +17,24 @@
 
         <div class="cell desc">
             <p>
-                <textarea class="row desc"
-                          [disabled]="isEditEnabled"
-                          [autofocus]="!isEditEnabled"
-                          ngClass>{{ recipePreview.ingredients }}</textarea>
+                <textarea class="row desc ingredients"
+                          [disabled]="isDisabledIngredients"
+                          [class.bordered]="!isDisabledIngredients">{{ recipePreview.ingredients }}</textarea>
                 <i class="material-icons"
-                   (click)="onEditRecipe()">edit</i>
+                   (click)="onEditRecipe1()">edit</i>
                 <i class="material-icons"
                    (click)="onSaveRecipe()">save</i>
             </p>
 
 
             <p>
-                <textarea class="row desc"
-                          [disabled]="isEditEnabled">{{ recipePreview.description }}</textarea>
+                <textarea class="row desc description"
+                          [disabled]="isDisabledDesc"
+                          [class.bordered]="!isDisabledDesc"
+                          [class.bordered]="!isDisabledDesc">{{ recipePreview.description }}</textarea>
 
                 <i class="material-icons"
-                   (click)="onEditRecipe()">edit</i>
+                   (click)="onEditRecipe2()">edit</i>
                 <i class="material-icons"
                    (click)="onSaveRecipe()">save</i>
             </p>
