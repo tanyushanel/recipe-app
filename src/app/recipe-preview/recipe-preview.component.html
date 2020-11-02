@@ -5,41 +5,54 @@
     </header>
     <app-logo></app-logo>
 
-    <main class="recipe-container recipe-desc">
+    <main class="recipe-container ">
         <app-rating [recipe]="recipePreview"></app-rating>
         <h4>{{ recipePreview.title }}</h4>
-
-        <div class="cell">
-            <div class="photo-wrapper">
-                <app-recipe-image [recipe]="recipePreview"></app-recipe-image>
+        <div class="recipe-desc">
+            <div class="cell image">
+                <div class="photo-wrapper">
+                    <app-recipe-image [recipe]="recipePreview"></app-recipe-image>
+                </div>
             </div>
-        </div>
 
-        <div class="cell desc">
-            <p>
-                <span class="row description ingredients"
-                      [class.is-disabled]="!isDisabledIngredients">{{ recipePreview.ingredients.join(' ') }} </span>
-                <i class="material-icons"
-                   [class.is-disabled]="!isDisabledIngredients"
-                   (click)="onEditIngredients()">edit</i>
-                <i class="material-icons"
-                   [class.is-disabled]="isDisabledIngredients">save</i>
-            </p>
+            <div class="cell desc">
+                <div class="row">
+                    <ul class="cell description ingredients">
+                        <li [class.is-disabled]="!isDisabledIngredients"
+                            *ngFor="let ingredient of recipePreview.ingredients">
+                            <span *ngIf="!isDisabledIngredients"
+                                  class="del-ins">-</span>
+                            {{ ingredient }}
+                        </li>
+                        <span *ngIf="isDisabledIngredients"
+                              class="del-ins">+</span>
 
+                    </ul>
 
-            <p>
-                <textarea class="row description"
-                          [(ngModel)]="recipePreview.description"
-                          [disabled]="isDisabledDesc"
-                          [class.is-disabled]="!isDisabledDesc">{{ recipePreview.description }}</textarea>
+                    <div class="cell">
+                        <i class="material-icons"
+                           [class.is-disabled]="!isDisabledIngredients"
+                           (click)="onEditIngredients()">edit</i>
+                        <i class="material-icons"
+                           [class.is-disabled]="isDisabledIngredients">save</i>
+                    </div>
 
-                <i class="material-icons"
-                   [class.is-disabled]="!isDisabledDesc"
-                   (click)="onEditDescription()">edit</i>
-                <i class="material-icons"
-                   [class.is-disabled]="isDisabledDesc"
-                   (click)="onSaveDescription()">save</i>
-            </p>
+                </div>
+
+                <div class="row">
+                    <textarea class="description"
+                              [(ngModel)]="recipePreview.description"
+                              [disabled]="isDisabledDesc"
+                              [class.is-disabled]="!isDisabledDesc">{{ recipePreview.description }}</textarea>
+
+                    <i class="material-icons"
+                       [class.is-disabled]="!isDisabledDesc"
+                       (click)="onEditDescription()">edit</i>
+                    <i class="material-icons"
+                       [class.is-disabled]="isDisabledDesc"
+                       (click)="onSaveDescription()">save</i>
+                </div>
+            </div>
 
 
         </div>

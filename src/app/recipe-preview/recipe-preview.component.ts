@@ -16,9 +16,9 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
   searchText = '';
-  description: string;
   isDisabledIngredients = true;
   isDisabledDesc = true;
+
   id: number;
 
   constructor(
@@ -34,7 +34,7 @@ export class RecipePreviewComponent implements OnInit {
   }
 
   onEditIngredients(): void {
-    this.isDisabledIngredients = false;
+    this.isDisabledIngredients = !this.isDisabledIngredients;
   }
 
   // onSaveIngredients(): void {
@@ -45,7 +45,7 @@ export class RecipePreviewComponent implements OnInit {
   // }
 
   onEditDescription(): void {
-    this.isDisabledDesc = false;
+    this.isDisabledDesc = !this.isDisabledDesc;
   }
 
   onSaveDescription(): void {

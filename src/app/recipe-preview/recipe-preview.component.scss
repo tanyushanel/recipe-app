@@ -1,12 +1,12 @@
 .recipe-container {
-  position: table;
-}
-
-.recipe-desc {
   border: 1px solid #d3d3d3;
   border-radius: 0.25rem;
   padding: 0.5rem;
   margin: 1rem 0;
+}
+
+.recipe-desc {
+  display: flex;
 }
 
 h4 {
@@ -21,17 +21,20 @@ h4 {
 
 li {
   list-style-type: none;
-  margin-left: 5rem;
 }
 
 .cell {
-  display: table-cell;
-
+  display: inline-block;
   padding: 0.25rem;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
 .desc {
-  width: 10rem;
   vertical-align: top;
 }
 
@@ -58,7 +61,7 @@ textarea {
   resize: none;
 
   border: none;
-  width: 8rem;
+
   min-height: 3rem;
 }
 
@@ -68,14 +71,20 @@ textarea:focus {
   white-space: normal;
 }
 
-p {
-  white-space: nowrap;
-}
-
 textarea.is-disabled {
   outline: 1px solid #d3d3d3;
 }
 
 i.is-disabled {
   color: #d3d3d3;
+}
+
+.del-ins {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
 }
