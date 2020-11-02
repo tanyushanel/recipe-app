@@ -20,12 +20,16 @@
                     <ul class="cell description ingredients">
                         <li [class.is-disabled]="!isDisabledIngredients"
                             *ngFor="let ingredient of recipePreview.ingredients">
-                            <span *ngIf="!isDisabledIngredients"
-                                  class="del-ins">-</span>
+                            <span class="del-ins"
+                                  *ngIf="!isDisabledIngredients">-</span>
                             {{ ingredient }}
                         </li>
-                        <span *ngIf="isDisabledIngredients"
-                              class="del-ins">+</span>
+                        <span class="del-ins"
+                              *ngIf="!isDisabledIngredients">+
+                        </span>
+                        <input type="text"
+                               *ngIf="!isDisabledIngredients">
+
 
                     </ul>
 

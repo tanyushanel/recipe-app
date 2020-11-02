@@ -55,17 +55,13 @@ i {
   cursor: pointer;
 }
 
-input,
 textarea {
   display: inline-block;
   resize: none;
-
   border: none;
-
   min-height: 3rem;
 }
 
-input:focus,
 textarea:focus {
   resize: none;
   white-space: normal;
@@ -73,6 +69,14 @@ textarea:focus {
 
 textarea.is-disabled {
   outline: 1px solid #d3d3d3;
+}
+input {
+  width: 5rem;
+  border: 1px solid #d3d3d3;
+}
+
+input:focus {
+  outline: none;
 }
 
 i.is-disabled {
@@ -87,4 +91,5 @@ i.is-disabled {
   height: 1rem;
   border: 1px solid #d3d3d3;
   border-radius: 50%;
+  margin: 0.25rem;
 }
