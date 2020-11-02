@@ -20,7 +20,6 @@ export class CurrentRecipeComponent implements OnInit {
   }
 
   onChangeRate(i: number): void {
-    this.recipeCurrent.rating = i;
     this.rateChangedCurrent.emit(i);
   }
 }

@@ -54,6 +54,4 @@ export class RecipePreviewComponent implements OnInit {
     ].description = this.recipePreview.description;
     this.isDisabledDesc = true;
   }
-
-  onSaveRecipe(): void {}
 }
