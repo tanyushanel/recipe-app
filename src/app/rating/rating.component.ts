@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../recipe.service';
 
 @Component({
@@ -8,12 +8,13 @@ import { Recipe } from '../recipe.service';
 })
 export class RatingComponent implements OnInit {
   @Input() recipe: Recipe;
-
+  @Output() r = new EventEmitter<number>();
   constructor() {}
 
   ngOnInit(): void {}
 
   onChangeRate(i: number): void {
     this.recipe.rating = i;
+    this.r.emit(i);
   }
 }

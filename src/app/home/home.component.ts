@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   onChangeRate(event): void {
     this.recipeHome.rating = event;
-    this.recipeService.saveRatingToLocalStore(this.recipeHome);
+    this.recipeService.saveToLocalStore(this.recipeHome);
   }
 
   goTo(): void {

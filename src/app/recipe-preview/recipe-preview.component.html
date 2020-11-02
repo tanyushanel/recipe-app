@@ -17,26 +17,29 @@
 
         <div class="cell desc">
             <p>
-                <textarea class="row desc ingredients"
-                          [disabled]="isDisabledIngredients"
-                          [class.bordered]="!isDisabledIngredients">{{ recipePreview.ingredients }}</textarea>
+                <span class="row description ingredients"
+                      [class.is-disabled]="!isDisabledIngredients">{{ recipePreview.ingredients.join(' ') }} </span>
                 <i class="material-icons"
-                   (click)="onEditRecipe1()">edit</i>
+                   [class.is-disabled]="!isDisabledIngredients"
+                   (click)="onEditIngredients()">edit</i>
                 <i class="material-icons"
+                   [class.is-disabled]="isDisabledIngredients"
                    (click)="onSaveRecipe()">save</i>
             </p>
 
 
             <p>
-                <textarea class="row desc description"
+                <textarea class="row description"
+                          [(ngModel)]="recipePreview.description"
                           [disabled]="isDisabledDesc"
-                          [class.bordered]="!isDisabledDesc"
-                          [class.bordered]="!isDisabledDesc">{{ recipePreview.description }}</textarea>
+                          [class.is-disabled]="!isDisabledDesc">{{ recipePreview.description }}</textarea>
 
                 <i class="material-icons"
-                   (click)="onEditRecipe2()">edit</i>
+                   [class.is-disabled]="!isDisabledDesc"
+                   (click)="onEditDescription()">edit</i>
                 <i class="material-icons"
-                   (click)="onSaveRecipe()">save</i>
+                   [class.is-disabled]="isDisabledDesc"
+                   (click)="onSaveDescription()">save</i>
             </p>
 
 

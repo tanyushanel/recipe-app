@@ -16,8 +16,10 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
   searchText = '';
+  description: string;
   isDisabledIngredients = true;
   isDisabledDesc = true;
+  id: number;
 
   constructor(
     private recipeService: RecipeService,
@@ -25,18 +27,32 @@ export class RecipePreviewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.activateRoute.snapshot.paramMap.get('id');
+    this.id = +this.activateRoute.snapshot.paramMap.get('id');
     this.recipePreview = this.recipeService.recipes.find(
-      (item) => item.id === id
+      (item) => item.id === this.id
     );
   }
 
-  onEditRecipe1(): void {
+  onEditIngredients(): void {
     this.isDisabledIngredients = false;
   }
 
-  onEditRecipe2(): void {
+  // onSaveIngredients(): void {
+  //   this.recipeService.recipes[
+  //     this.id
+  //   ].description = this.recipePreview.ingredients;
+  //   this.isDisabledIngredients= true;
+  // }
+
+  onEditDescription(): void {
     this.isDisabledDesc = false;
+  }
+
+  onSaveDescription(): void {
+    this.recipeService.recipes[
+      this.id
+    ].description = this.recipePreview.description;
+    this.isDisabledDesc = true;
   }
 
   onSaveRecipe(): void {}

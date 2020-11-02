@@ -1,5 +1,6 @@
 <div class="recipe-container recipe-desc">
-    <app-rating [recipe]="recipeCurrent"></app-rating>
+    <app-rating [recipe]="recipeCurrent"
+                (r)="onChangeRate($event)"></app-rating>
 
     <h4 class="title"
         (click)="onTitleClick()">{{ recipeCurrent.title }}</h4>

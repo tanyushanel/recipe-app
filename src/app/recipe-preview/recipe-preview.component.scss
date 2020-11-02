@@ -13,8 +13,7 @@ h4 {
   margin: 0;
 }
 
-.desc {
-  vertical-align: top;
+.description {
   font-size: 80%;
   margin: 0.25rem;
   color: #808080;
@@ -30,8 +29,10 @@ li {
 
   padding: 0.25rem;
 }
-.row {
-  white-space: nowrap;
+
+.desc {
+  width: 10rem;
+  vertical-align: top;
 }
 
 .photo-wrapper {
@@ -54,13 +55,11 @@ i {
 input,
 textarea {
   display: inline-block;
-  white-space: normal;
-  word-break: break-all;
   resize: none;
-  overflow: hidden;
+
   border: none;
   width: 8rem;
-  height: 5rem;
+  min-height: 3rem;
 }
 
 input:focus,
@@ -73,6 +72,10 @@ p {
   white-space: nowrap;
 }
 
-.bordered {
+textarea.is-disabled {
   outline: 1px solid #d3d3d3;
+}
+
+i.is-disabled {
+  color: #d3d3d3;
 }

@@ -22,7 +22,7 @@ export class RecipeService {
         'Coook it! Coook it! Coook it! Coook it! Coook it! Coook it!',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0fXqE-7EcbiLQlWhCSchbslx0T6jyPYcA9A&usqp=CAU',
-      rating: 0,
+      rating: 100,
     },
 
     {
@@ -32,7 +32,7 @@ export class RecipeService {
       description: 'Fry it! Fry it! Fry it! Fry it!',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRM6wRsEqpFKGyl8sLxEJTPat5JgLr391jmQ&usqp=CAU',
-      rating: 0,
+      rating: 100,
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export class RecipeService {
       description: 'Freeze it! Freeze it! Freeze it!',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiFo9-ZVEWJsEw7NVh5_7RgH01I2W2tnwMIg&usqp=CAU',
-      rating: 0,
+      rating: 100,
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ export class RecipeService {
       description: 'Wait it',
       image:
         'https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg',
-      rating: 0,
+      rating: 100,
     },
     {
       id: 5,
@@ -59,7 +59,7 @@ export class RecipeService {
       description: 'Mix it',
       image:
         'https://www.adorama.com/alc/wp-content/uploads/2018/02/BBBURGER8-1024x683-1024x683.jpg',
-      rating: 0,
+      rating: 100,
     },
     {
       id: 6,
@@ -68,7 +68,7 @@ export class RecipeService {
       description: 'Boil it',
       image:
         'https://cdn.cnn.com/cnnnext/dam/assets/191115120957-immigrant-food-columbia-road.jpg',
-      rating: 0,
+      rating: 100,
     },
     {
       id: 7,
@@ -77,19 +77,25 @@ export class RecipeService {
       description: 'Bake it',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVoB3a_65P1uEA5W3EgOyAsCbsmkTmtmVF8Q&usqp=CAU',
-      rating: 0,
+      rating: 100,
     },
   ];
-  randomRecipe = this.recipes[Math.floor(Math.random() * this.recipes.length)];
+  randomRecipe: Recipe;
 
   constructor() {
-    this.recipes.forEach(
-      (item) => (item.rating = +localStorage.getItem(item.id.toString()))
+    this.recipes = this.recipes.map(
+      (item) =>
+        JSON.parse(localStorage.getItem(item.id.toString())) ||
+        this.saveToLocalStore(item)
     );
+
+    this.randomRecipe = this.recipes[
+      Math.floor(Math.random() * this.recipes.length)
+    ];
   }
 
-  saveRatingToLocalStore(current: Recipe): void {
-    localStorage.setItem(current.id.toString(), current.rating.toString());
+  saveToLocalStore(current: Recipe): void {
+    localStorage.setItem(current.id.toString(), JSON.stringify(current));
   }
 
   editRecipe(recipe): void {

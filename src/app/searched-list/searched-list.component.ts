@@ -38,6 +38,6 @@ export class SearchedListComponent implements OnInit {
 
   onChangeRate(clickedRecipe: Recipe, rate: number): void {
     clickedRecipe.rating = rate;
-    this.recipeService.saveRatingToLocalStore(clickedRecipe);
+    this.recipeService.saveToLocalStore(clickedRecipe);
   }
 }
