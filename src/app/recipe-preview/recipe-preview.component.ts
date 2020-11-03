@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -15,10 +16,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
+  ingredients: string[];
   searchText = '';
   isDisabledIngredients = true;
   isDisabledDesc = true;
-
+  itemThroughLined: number;
   id: number;
 
   constructor(
@@ -31,27 +33,36 @@ export class RecipePreviewComponent implements OnInit {
     this.recipePreview = this.recipeService.recipes.find(
       (item) => item.id === this.id
     );
+
+    this.recipePreview = this.recipeService.recipes[this.id];
+    this.itemThroughLined = this.recipePreview[this.id];
+    this.ingredients = this.recipePreview.ingredients;
   }
 
   onEditIngredients(): void {
     this.isDisabledIngredients = !this.isDisabledIngredients;
   }
 
-  // onSaveIngredients(): void {
-  //   this.recipeService.recipes[
-  //     this.id
-  //   ].description = this.recipePreview.ingredients;
-  //   this.isDisabledIngredients= true;
-  // }
+  onDeleteClick(ingredient: string): void {
+    this.ingredients = this.ingredients.filter(
+      (item) => !(item === ingredient)
+    );
+    // this.itemTroughLined = 2; //TODO
+  }
+
+  onInsertIngredients(): void {}
+
+  onSaveIngredients(): void {
+    this.recipePreview.ingredients = this.ingredients;
+    this.isDisabledIngredients = true;
+  }
 
   onEditDescription(): void {
     this.isDisabledDesc = !this.isDisabledDesc;
   }
 
   onSaveDescription(): void {
-    this.recipeService.recipes[
-      this.id
-    ].description = this.recipePreview.description;
+    this.recipePreview.description = this.recipePreview.description;
     this.isDisabledDesc = true;
   }
 }

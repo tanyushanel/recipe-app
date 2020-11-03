@@ -15,7 +15,7 @@ export interface Recipe {
 export class RecipeService {
   recipes = [
     {
-      id: 1,
+      id: 0,
       title: 'Cezar',
       ingredients: ['salad', 'bread', 'meat'],
       description:
@@ -26,7 +26,7 @@ export class RecipeService {
     },
 
     {
-      id: 2,
+      id: 1,
       title: 'Fries',
       ingredients: ['potato', 'sauce', 'oil'],
       description: 'Fry it! Fry it! Fry it! Fry it!',
@@ -35,7 +35,7 @@ export class RecipeService {
       rating: 0,
     },
     {
-      id: 3,
+      id: 2,
       title: 'Ice-cream',
       ingredients: ['milk', 'ice', 'banana'],
       description: 'Freeze it! Freeze it! Freeze it!',
@@ -44,7 +44,7 @@ export class RecipeService {
       rating: 0,
     },
     {
-      id: 4,
+      id: 3,
       title: 'Wine',
       ingredients: ['grape', 'sugar', 'water'],
       description: 'Wait it',
@@ -53,7 +53,7 @@ export class RecipeService {
       rating: 0,
     },
     {
-      id: 5,
+      id: 4,
       title: 'Coctail',
       ingredients: ['milk', 'ice', 'banana'],
       description: 'Mix it',
@@ -62,7 +62,7 @@ export class RecipeService {
       rating: 0,
     },
     {
-      id: 6,
+      id: 5,
       title: 'Soup',
       ingredients: ['water', 'potato', 'meat'],
       description: 'Boil it',
@@ -71,7 +71,7 @@ export class RecipeService {
       rating: 0,
     },
     {
-      id: 7,
+      id: 6,
       title: 'Bun',
       ingredients: ['milk', 'flour', 'egg'],
       description: 'Bake it',

@@ -49,10 +49,13 @@ li {
 
 i {
   display: inline-block;
-  right: 5px;
-  bottom: 5px;
+
   color: #808080;
   cursor: pointer;
+}
+
+i.is-disabled {
+  color: #d3d3d3;
 }
 
 textarea {
@@ -70,17 +73,15 @@ textarea:focus {
 textarea.is-disabled {
   outline: 1px solid #d3d3d3;
 }
+
 input {
   width: 5rem;
   border: 1px solid #d3d3d3;
 }
 
-input:focus {
+input:focus,
+button:focus {
   outline: none;
-}
-
-i.is-disabled {
-  color: #d3d3d3;
 }
 
 .del-ins {
@@ -92,4 +93,8 @@ i.is-disabled {
   border: 1px solid #d3d3d3;
   border-radius: 50%;
   margin: 0.25rem;
+}
+
+.is-through-lined {
+  text-decoration: line-through;
 }
