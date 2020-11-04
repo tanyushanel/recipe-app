@@ -22,13 +22,13 @@
                             [class.is-through-lined]="ingredient.id === ind && ingredient.isThroughLined && !isDisabledIngredients"
                             [class.ura]="ingredient.name === item.name"
                             *ngFor="let item of recipePreview.ingredients; let ind = index">
-                            <span class="del-ins"
+                            <span class="del-ins del"
                                   *ngIf="!isDisabledIngredients"
                                   (click)="onDeleteIngredient(item, ind)">-</span>
                             {{ item.name }}
                         </li>
 
-                        <span class="del-ins"
+                        <span class="del-ins ins"
                               *ngIf="!isDisabledIngredients"
                               (click)="onInsertIngredients()">+</span>
 
