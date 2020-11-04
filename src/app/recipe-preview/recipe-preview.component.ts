@@ -8,8 +8,6 @@ export class Ingredient {
   isThroughLined: boolean;
 }
 
-export class RecipeModel {}
-
 @Component({
   selector: 'app-recipe-preview',
   templateUrl: './recipe-preview.component.html',
@@ -17,7 +15,7 @@ export class RecipeModel {}
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
-  ingredient: Ingredient = new Ingredient();
+  ingredient = new Ingredient();
   id: number;
   ingredients: Ingredient[];
   searchText = '';
