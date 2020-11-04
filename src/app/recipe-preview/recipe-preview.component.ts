@@ -61,8 +61,15 @@ export class RecipePreviewComponent implements OnInit {
   }
 
   onInsertIngredients(): void {
-    this.ingredients.push(new Ingredient(this.ingredient.name));
-    this.ingredient.name = '';
+    if (
+      this.ingredients.find((item) => item.name === this.ingredient.name) ||
+      !this.ingredient.name.trim()
+    ) {
+      this.ingredient.name = '';
+    } else {
+      this.ingredients.push(new Ingredient(this.ingredient.name));
+      this.ingredient.name = '';
+    }
   }
 
   onSaveIngredients(): void {
