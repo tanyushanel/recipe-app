@@ -20,6 +20,7 @@
                     <ul class="cell description ingredients">
                         <li [class.is-disabled]="!isDisabledIngredients"
                             [class.is-through-lined]="ingredient.id === ind && ingredient.isThroughLined && !isDisabledIngredients"
+                            [class.ura]="ingredient.name === item.name"
                             *ngFor="let item of recipePreview.ingredients; let ind = index">
                             <span class="del-ins"
                                   *ngIf="!isDisabledIngredients"

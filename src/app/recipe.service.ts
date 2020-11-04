@@ -101,7 +101,7 @@ export class RecipeService {
       ingredients: [
         { id: 0, name: 'egg', isThroughLined: false },
         { id: 1, name: 'flour', isThroughLined: false },
-        { id: 2, name: 'sugar', isThroughLined: false },
+        { id: 2, name: 'sause', isThroughLined: false },
       ],
       description: 'Bake it',
       image:

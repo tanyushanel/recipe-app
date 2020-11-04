@@ -4,8 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 export class Ingredient {
   id: number;
-  name: string;
-  isThroughLined: boolean;
+  constructor(public name?: string, public isThroughLined?: boolean) {
+    this.name = name;
+    this.isThroughLined = isThroughLined;
+  }
 }
 
 @Component({
@@ -15,6 +17,7 @@ export class Ingredient {
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
+
   ingredient = new Ingredient();
   id: number;
   ingredients: Ingredient[];
@@ -59,7 +62,8 @@ export class RecipePreviewComponent implements OnInit {
   }
 
   onInsertIngredients(): void {
-    this.ingredients.push(this.ingredient);
+    this.ingredients.push(new Ingredient(this.ingredient.name));
+    this.ingredient.name = '';
   }
 
   onSaveIngredients(): void {
