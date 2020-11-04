@@ -60,9 +60,11 @@ i.is-disabled {
 
 textarea {
   display: inline-block;
+  padding: 0.25rem;
   resize: none;
   border: none;
-  min-height: 3rem;
+  min-height: 5rem;
+  height: auto;
 }
 
 textarea:focus {

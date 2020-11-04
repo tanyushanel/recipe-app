@@ -8,5 +8,5 @@
 
     <app-current-recipe *ngFor="let item of searchedList"
                         [recipeCurrent]="item"
-                        (rateChangedCurrent)="onChangeRate(item, $event)">{{item.title}}</app-current-recipe>
+                        (rateChangedCurrent)="onChangeRate(item, $event)">{{ item.title }}</app-current-recipe>
 </div>

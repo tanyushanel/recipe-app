@@ -18,7 +18,7 @@
             <ul class="row">
                 <i>Ingredients:</i>
                 <li *ngFor="let item of recipeCurrent.ingredients; let ind = index">
-                    {{ recipeCurrent.ingredients[ind] }}
+                    {{ recipeCurrent.ingredients[ind].name }}
                 </li>
             </ul>
 

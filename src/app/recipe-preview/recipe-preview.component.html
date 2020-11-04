@@ -19,12 +19,12 @@
                 <div class="row">
                     <ul class="cell description ingredients">
                         <li [class.is-disabled]="!isDisabledIngredients"
-                            *ngFor="let ingredient of recipePreview.ingredients; let ind = index"
-                            [class.is-through-lined]="itemThroughLined === ind">
+                            [class.is-through-lined]="ingredient.id === ind && ingredient.isThroughLined && !isDisabledIngredients"
+                            *ngFor="let item of recipePreview.ingredients; let ind = index">
                             <span class="del-ins"
                                   *ngIf="!isDisabledIngredients"
-                                  (click)="onDeleteClick(ingredient)">-</span>
-                            {{ ingredient }}
+                                  (click)="onDeleteIngredient(item, ind)">-</span>
+                            {{ item.name }}
                         </li>
 
                         <span class="del-ins"
@@ -32,8 +32,8 @@
                               (click)="onInsertIngredients()">+</span>
 
                         <input type="text"
-                               *ngIf="!isDisabledIngredients">
-
+                               *ngIf="!isDisabledIngredients"
+                               [(ngModel)]="ingredient.name">
 
                     </ul>
 

@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe, RecipeService } from '../recipe.service';
 import { ActivatedRoute } from '@angular/router';
 
+export class Ingredient {
+  id: number;
+  name: string;
+  isThroughLined: boolean;
+}
+
+export class RecipeModel {}
+
 @Component({
   selector: 'app-recipe-preview',
   templateUrl: './recipe-preview.component.html',
@@ -9,12 +17,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
-  ingredients: string[];
+  ingredient: Ingredient = new Ingredient();
+  id: number;
+  ingredients: Ingredient[];
   searchText = '';
   isDisabledIngredients = true;
   isDisabledDesc = true;
-  itemThroughLined: number;
-  id: number;
 
   constructor(
     private recipeService: RecipeService,
@@ -28,7 +36,6 @@ export class RecipePreviewComponent implements OnInit {
     );
 
     this.recipePreview = this.recipeService.recipes[this.id];
-    this.itemThroughLined = this.recipePreview[this.id];
     this.ingredients = this.recipePreview.ingredients;
   }
 
@@ -36,19 +43,32 @@ export class RecipePreviewComponent implements OnInit {
     this.isDisabledIngredients = !this.isDisabledIngredients;
   }
 
-  onDeleteClick(ingredient: string): void {
-    this.ingredients = this.ingredients.filter(
-      (item) => !(item === ingredient)
-    );
-    // this.itemTroughLined = 2; //TODO
+  onDeleteIngredient(ingredient: Ingredient, index: number): void {
+    this.onDeleteClick();
+
+    this.ingredient.id = index;
+    if (this.ingredient.isThroughLined) {
+      this.ingredients = this.ingredients.filter(
+        (item) => !(item === ingredient)
+      );
+    } else {
+      this.ingredients = this.recipePreview.ingredients;
+    }
   }
 
-  onInsertIngredients(): void {}
+  onDeleteClick(): void {
+    this.ingredient.isThroughLined = !this.ingredient.isThroughLined;
+  }
+
+  onInsertIngredients(): void {
+    this.ingredients.push(this.ingredient);
+  }
 
   onSaveIngredients(): void {
     this.recipePreview.ingredients = this.ingredients;
     this.recipeService.saveToLocalStore(this.recipePreview);
     this.isDisabledIngredients = true;
+    this.ingredient.isThroughLined = false;
   }
 
   onEditDescription(): void {
