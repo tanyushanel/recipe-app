@@ -1,11 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe, RecipeService } from '../recipe.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -54,6 +47,7 @@ export class RecipePreviewComponent implements OnInit {
 
   onSaveIngredients(): void {
     this.recipePreview.ingredients = this.ingredients;
+    this.recipeService.saveToLocalStore(this.recipePreview);
     this.isDisabledIngredients = true;
   }
 
@@ -62,7 +56,7 @@ export class RecipePreviewComponent implements OnInit {
   }
 
   onSaveDescription(): void {
-    this.recipePreview.description = this.recipePreview.description;
+    this.recipeService.saveToLocalStore(this.recipePreview);
     this.isDisabledDesc = true;
   }
 }
