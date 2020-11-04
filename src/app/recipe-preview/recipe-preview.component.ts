@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 
 export class Ingredient {
   id: number;
-  constructor(public name?: string, public isThroughLined?: boolean) {
+  isThroughLined: boolean;
+  constructor(public name?: string) {
     this.name = name;
-    this.isThroughLined = isThroughLined;
   }
 }
 
@@ -17,7 +17,6 @@ export class Ingredient {
 })
 export class RecipePreviewComponent implements OnInit {
   recipePreview: Recipe;
-
   ingredient = new Ingredient();
   id: number;
   ingredients: Ingredient[];
