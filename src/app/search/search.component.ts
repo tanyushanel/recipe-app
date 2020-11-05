@@ -26,6 +26,6 @@ export class SearchComponent implements OnInit {
   }
 
   onSearchClick(): void {
-    this.router.navigate([`searched/${this.typingValue}`]);
+    this.router.navigate([`searched/Title/${this.typingValue}`]);
   }
 }

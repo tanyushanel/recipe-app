@@ -10,8 +10,9 @@ import { Recipe, RecipeService } from '../recipe.service';
 })
 export class SearchedListComponent implements OnInit {
   clickedRecipe: Recipe;
-  searchedList = [];
+  searchedList: Recipe[] = [];
   searchText = '';
+  searchTarget = '';
   recipeTitle: string;
 
   constructor(
@@ -21,13 +22,22 @@ export class SearchedListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.searchText = this.activateRoute.snapshot.paramMap
-      .get('searchText')
-      .toLowerCase();
+    this.searchText = this.activateRoute.snapshot.paramMap.get('searchText');
 
-    this.searchedList = this.recipeService.recipes.filter(
-      (item) => item.title.toLowerCase() === this.searchText
+    this.searchTarget = this.activateRoute.snapshot.paramMap.get(
+      'searchTarget'
     );
+
+    if (this.searchTarget.toLowerCase() === 'title') {
+      this.searchedList = this.recipeService.recipes.filter(
+        (item) => item.title.toLowerCase() === this.searchText.toLowerCase()
+      );
+    }
+    if (this.searchTarget.toLowerCase() === 'category') {
+      this.searchedList = this.recipeService.recipes.filter(
+        (item) => item.category.toLowerCase() === this.searchText.toLowerCase()
+      );
+    }
   }
 
   goTo(clickedRecipe: Recipe): number {

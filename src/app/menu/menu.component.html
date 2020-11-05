@@ -1,5 +1,21 @@
-<div>
-    <hr>
-    <hr>
-    <hr>
+<div class="menu-lines"
+     (click)="onMenuClick()"
+     *ngIf="!isMenuOpened">
+    <div class="horizont-line"></div>
+    <div class="horizont-line"></div>
+    <div class="horizont-line"></div>
+</div>
+
+<div class="menu-lines"
+     (click)="onMenuClick()"
+     *ngIf="isMenuOpened">
+    <div class="vertical-line"></div>
+    <div class="vertical-line"></div>
+    <div class="vertical-line"></div>
+
+    <ul class="menu-list">
+        <li *ngFor="let item of menuPoints"
+            (click)="goToCategory(item)">
+            {{ item }}</li>
+    </ul>
 </div>

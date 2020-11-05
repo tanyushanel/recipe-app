@@ -1,11 +1,35 @@
-hr {
+.horizont-line {
   width: 1.5rem;
   height: 2px;
-  margin-left: 0;
-  border: none;
+  margin-bottom: 0.5rem;
   background: #808080;
 }
-div {
+.menu-lines {
+  position: relative;
   display: inline-block;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
+}
+
+.menu-list {
+  position: absolute;
+  font-size: 85%;
+  top: 2rem;
+  width: 7rem;
+  min-height: 2rem;
+  background: rgba($color: #d3d3d3, $alpha: 0.8);
+  border: 1px solid #d3d3d3;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  color: #808080;
+}
+
+.vertical-line {
+  display: inline-block;
+  width: 2px;
+  height: 1.5rem;
+  border: none;
+  background: #808080;
+  margin-right: 0.5rem;
 }

@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipe', component: RecipeComponent },
   {
-    path: 'searched/:searchText',
+    path: 'searched/:searchTarget/:searchText', //  searhed/Category/Candy,  searhed/Title/Pizza
     component: SearchedListComponent,
     data: {},
     runGuardsAndResolvers: 'always',
