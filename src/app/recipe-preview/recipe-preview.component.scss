@@ -112,3 +112,10 @@ button:focus {
 .is-through-lined {
   text-decoration: line-through;
 }
+
+.hint {
+  display: block;
+  margin-left: 1.5rem;
+  font-size: 70%;
+  color: red;
+}

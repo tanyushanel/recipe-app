@@ -23,6 +23,7 @@ export class RecipePreviewComponent implements OnInit {
   searchText = '';
   isDisabledIngredients = true;
   isDisabledDesc = true;
+  hint = '';
 
   constructor(
     private recipeService: RecipeService,
@@ -62,13 +63,15 @@ export class RecipePreviewComponent implements OnInit {
 
   onInsertIngredients(): void {
     if (
+      this.ingredient.name === undefined ||
       this.ingredients.find((item) => item.name === this.ingredient.name) ||
       !this.ingredient.name.trim()
     ) {
-      this.ingredient.name = '';
+      this.hint = 'Invalid input';
     } else {
       this.ingredients.push(new Ingredient(this.ingredient.name));
       this.ingredient.name = '';
+      this.hint = '';
     }
   }
 

@@ -35,8 +35,10 @@
                         <input type="text"
                                *ngIf="!isDisabledIngredients"
                                placeholder="...ingredient..."
-                               onfocus="this.placeholder = ''"
+                               onfocus="this.placeholder = ' '"
                                [(ngModel)]="ingredient.name">
+                        <span class="hint"
+                              *ngIf="!isDisabledIngredients">{{ hint }}</span>
 
                     </ul>
 
