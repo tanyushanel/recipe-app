@@ -19,12 +19,11 @@
                 <div class="row">
                     <ul class="cell description ingredients">
                         <li [class.is-disabled]="!isDisabledIngredients"
-                            [class.is-through-lined]="ingredient.id === ind && ingredient.isThroughLined && !isDisabledIngredients"
-                            [class.ura]="ingredient.name === item.name"
+                            [class.is-through-lined]="index === ind && ingredient.isThroughLined && !isDisabledIngredients "
                             *ngFor="let item of recipePreview.ingredients; let ind = index">
                             <span class="del-ins del"
                                   *ngIf="!isDisabledIngredients"
-                                  (click)="onDeleteIngredient(item, ind)">-</span>
+                                  (click)="onDeleteIngredient(item)">-</span>
                             {{ item.name }}
                         </li>
 

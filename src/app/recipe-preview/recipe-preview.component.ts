@@ -3,7 +3,6 @@ import { Recipe, RecipeService } from '../recipe.service';
 import { ActivatedRoute } from '@angular/router';
 
 export class Ingredient {
-  id: number;
   isThroughLined: boolean;
   constructor(public name?: string) {
     this.name = name;
@@ -24,6 +23,7 @@ export class RecipePreviewComponent implements OnInit {
   isDisabledIngredients = true;
   isDisabledDesc = true;
   hint = '';
+  index: number;
 
   constructor(
     private recipeService: RecipeService,
@@ -44,10 +44,12 @@ export class RecipePreviewComponent implements OnInit {
     this.isDisabledIngredients = !this.isDisabledIngredients;
   }
 
-  onDeleteIngredient(ingredient: Ingredient, index: number): void {
+  onDeleteIngredient(ingredient: Ingredient): void {
     this.onDeleteClick();
 
-    this.ingredient.id = index;
+    this.index = this.ingredients.findIndex(
+      (item) => item.name === ingredient.name
+    );
     if (this.ingredient.isThroughLined) {
       this.ingredients = this.ingredients.filter(
         (item) => !(item === ingredient)
@@ -70,9 +72,9 @@ export class RecipePreviewComponent implements OnInit {
       this.hint = 'Invalid input';
     } else {
       this.ingredients.push(new Ingredient(this.ingredient.name));
-      this.ingredient.name = '';
       this.hint = '';
     }
+    this.ingredient.name = '';
   }
 
   onSaveIngredients(): void {

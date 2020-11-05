@@ -19,9 +19,9 @@ export class RecipeService {
       id: 0,
       title: 'Cezar',
       ingredients: [
-        { id: 0, name: 'cheese', isThroughLined: false },
-        { id: 1, name: 'meat', isThroughLined: false },
-        { id: 2, name: 'salad', isThroughLined: false },
+        { name: 'cheese', isThroughLined: false },
+        { name: 'meat', isThroughLined: false },
+        { name: 'salad', isThroughLined: false },
       ],
       description:
         'Coook it! Coook it! Coook it! Coook it! Coook it! Coook it!',
@@ -34,9 +34,9 @@ export class RecipeService {
       id: 1,
       title: 'Fries',
       ingredients: [
-        { id: 0, name: 'potato', isThroughLined: false },
-        { id: 1, name: 'oil', isThroughLined: false },
-        { id: 2, name: 'sause', isThroughLined: false },
+        { name: 'potato', isThroughLined: false },
+        { name: 'oil', isThroughLined: false },
+        { name: 'sause', isThroughLined: false },
       ],
       description: 'Fry it! Fry it! Fry it! Fry it!',
       image:
@@ -47,9 +47,9 @@ export class RecipeService {
       id: 2,
       title: 'Ice-cream',
       ingredients: [
-        { id: 0, name: 'milk', isThroughLined: false },
-        { id: 1, name: 'ice', isThroughLined: false },
-        { id: 2, name: 'fruit', isThroughLined: false },
+        { name: 'milk', isThroughLined: false },
+        { name: 'ice', isThroughLined: false },
+        { name: 'fruit', isThroughLined: false },
       ],
       description: 'Freeze it! Freeze it! Freeze it!',
       image:
@@ -60,9 +60,9 @@ export class RecipeService {
       id: 3,
       title: 'Wine',
       ingredients: [
-        { id: 0, name: 'water', isThroughLined: false },
-        { id: 1, name: 'oil', isThroughLined: false },
-        { id: 2, name: 'sause', isThroughLined: false },
+        { name: 'water', isThroughLined: false },
+        { name: 'oil', isThroughLined: false },
+        { name: 'sause', isThroughLined: false },
       ],
       description: 'Wait it',
       image:
@@ -73,9 +73,9 @@ export class RecipeService {
       id: 4,
       title: 'Coctail',
       ingredients: [
-        { id: 0, name: 'milk', isThroughLined: false },
-        { id: 1, name: 'syroup', isThroughLined: false },
-        { id: 2, name: 'banana', isThroughLined: false },
+        { name: 'milk', isThroughLined: false },
+        { name: 'syroup', isThroughLined: false },
+        { name: 'banana', isThroughLined: false },
       ],
       description: 'Mix it',
       image:
@@ -86,9 +86,9 @@ export class RecipeService {
       id: 5,
       title: 'Soup',
       ingredients: [
-        { id: 0, name: 'potato', isThroughLined: false },
-        { id: 1, name: 'cabbage', isThroughLined: false },
-        { id: 2, name: 'carrot', isThroughLined: false },
+        { name: 'potato', isThroughLined: false },
+        { name: 'cabbage', isThroughLined: false },
+        { name: 'carrot', isThroughLined: false },
       ],
       description: 'Boil it',
       image:
@@ -99,9 +99,9 @@ export class RecipeService {
       id: 6,
       title: 'Bun',
       ingredients: [
-        { id: 0, name: 'egg', isThroughLined: false },
-        { id: 1, name: 'flour', isThroughLined: false },
-        { id: 2, name: 'sause', isThroughLined: false },
+        { name: 'egg', isThroughLined: false },
+        { name: 'flour', isThroughLined: false },
+        { name: 'sause', isThroughLined: false },
       ],
       description: 'Bake it',
       image:
