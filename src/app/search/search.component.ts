@@ -26,6 +26,8 @@ export class SearchComponent implements OnInit {
   }
 
   onSearchClick(): void {
-    this.router.navigate([`searched/Title/${this.typingValue}`]);
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`searched/Title/${this.typingValue}`]);
+    });
   }
 }
