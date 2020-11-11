@@ -19,6 +19,8 @@ export class MenuComponent implements OnInit {
   }
 
   goToCategory(category: string): void {
-    this.router.navigate([`searched/Category/${category}`]);
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`searched/Category/${category}`]);
+    });
   }
 }
