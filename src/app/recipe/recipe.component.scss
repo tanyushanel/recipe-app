@@ -1,19 +1,19 @@
 .title {
   font-size: 70%;
   margin: 0.25rem;
-  color: #808080;
+  color: var(--desc-color);
 }
 
 i {
   display: inline-block;
   right: 5px;
   bottom: 5px;
-  color: #808080;
+  color: var(--desc-color);
   cursor: pointer;
   font-size: 80%;
 }
 
 .current {
-  background: #d3d3d3;
+  background: var(--transparent-color);
   border-radius: 0.25rem;
 }

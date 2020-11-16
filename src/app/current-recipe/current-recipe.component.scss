@@ -3,7 +3,7 @@
 }
 
 .recipe-desc {
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--transparent-color);
   border-radius: 0.25rem;
   padding: 0.5rem;
   margin: 1rem 0;
@@ -22,7 +22,7 @@
   vertical-align: top;
   font-size: 80%;
   margin: 0.25rem;
-  color: #808080;
+  color: var(--desc-color);
 }
 
 li {
