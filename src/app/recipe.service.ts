@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Ingredient } from './recipe-preview/recipe-preview.component';
 
-export interface Recipe {
+export class Recipe {
   id: number;
   title: string;
   ingredients: Ingredient[];
